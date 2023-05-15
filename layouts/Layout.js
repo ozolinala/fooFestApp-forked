@@ -1,14 +1,17 @@
-import Anchor from "./Anchor";
-export default function Layout({ navData, children })  {
-    console.log({navData});
+// import Anchor from "./Anchor";
+import Basket from "@/components/Basket";
+export default function Layout({ children })  {
+  
     return (
         <>
         <nav>
-            {navData.map((dog) => (
-                <Anchor href={`/dogs/${dog.slug}`}>{dog.title}</Anchor> 
-                ))}
+           <anchor href="#home">Home</anchor>
+           <anchor href="#home">Tickets</anchor>
         </nav>
+        <main>
         {children}
+        </main>
+        <Basket/>
         <footer>&copy;footer</footer>
         </>
     );
