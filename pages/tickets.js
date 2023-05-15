@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import fs from 'fs';
+import Ticket from '../components/Ticket';
 
 export default function Home({data}) {
   return (
@@ -12,7 +13,8 @@ export default function Home({data}) {
       </Head>
 <div className='Home'>
   <article>
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    {data.map(ticket =><Ticket{...ticket}/>)}
+    {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
   </article>
 </div>
     </>
