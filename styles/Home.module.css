@@ -1,3 +1,21 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+}
+
+.Body {
+  width: 90%;
+  margin: auto;
+}
+
+/*NEXTJS PREMADE STUFF*/
+
 .main {
   display: flex;
   flex-direction: column;
@@ -97,7 +115,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
