@@ -27,3 +27,28 @@
   align-items: center;
   width: 100%;
 }
+
+.announcement {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Newsletter {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  padding: 8rem;
+}
+
+.announcement > div {
+  flex-basis: 50%;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
