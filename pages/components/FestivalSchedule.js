@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/Program.module.css";
 
-function ArtistInfo() {
-  let [data, setData] = useState([]);
+function FestivalSchedule() {
+  let [data, setData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://tan-chipped-baboon.glitch.me/bands"
+        "https://tan-chipped-baboon.glitch.me/schedule"
       );
       const jsonData = await response.json();
-      const first7Results = jsonData.slice(0, 4);
-      setData(first7Results);
+      setData(jsonData);
     };
 
     fetchData();
   }, []);
 
   return (
-    <div className={styles.ArtistInfo}>
+    <div className={styles.FestivalSchedule}>
       {data.map((item) => (
         <div className={styles.nameAndGenre} key={item.id}>
           <p>{item.name}</p>
@@ -29,4 +28,4 @@ function ArtistInfo() {
   );
 }
 
-export default ArtistInfo;
+export default FestivalSchedule;
