@@ -8,11 +8,26 @@ const initialState = {
 
 function reducer(state, action) {
     switch (action.action){
-case "REMOVE_ONE_PRODUCT":
+case "EMPTY_BASKET":
+    return {...state, basket:[]};
 
-console.log(action);
+case "REMOVE_ONE_PRODUCT":
+    const nextBasket = state.basket.map(item =>{
+        if(item.id === action.payload.id){
+            // found the one
+            const copy = {...item};
+            copy.amount--;
+            return copy;
+    } else {
+        // not found
+        return item;
+    }
+});
+// filter out the ones that are 0
+const finalBasket = nextBasket.filter(item =>item.amount > 0)
+
 return {
-    ...state
+    ...state, basket: finalBasket
 };
 
         case "ADD_PRODUCT":
