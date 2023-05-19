@@ -4,8 +4,50 @@ import { Navbar } from "./components/Navbar";
 import { Newsletter } from "./components/Newsletter";
 import { Footer } from "./components/Footer";
 import OneDaySchedule from "./components/OneDaySchedule";
+import { Tabs } from "antd";
+import { Test } from "./components/Test";
 
 export default function Program() {
+  const onChange = (key) => {
+    console.log(key);
+  };
+  const items = [
+    {
+      key: "1",
+      label: `Monday`,
+      children: <Test day="monday" />,
+    },
+    {
+      key: "2",
+      label: `Tuesday`,
+      children: <Test day="tuesDAY" />,
+    },
+    {
+      key: "3",
+      label: `Wednesday`,
+      children: `Content of Tab Pane 3`,
+    },
+    {
+      key: "4",
+      label: `Thursday`,
+      children: `Content of Tab Pane 1`,
+    },
+    {
+      key: "5",
+      label: `Friday`,
+      children: `Content of Tab Pane 2`,
+    },
+    {
+      key: "6",
+      label: `Saturday`,
+      children: `Content of Tab Pane 3`,
+    },
+    {
+      key: "7",
+      label: `Sunday`,
+      children: `Content of Tab Pane 3`,
+    },
+  ];
   return (
     <>
       <Head>
@@ -16,6 +58,15 @@ export default function Program() {
       </Head>
       <main className={styles.Main}>
         <h1>PROGRAM</h1>
+        <div className={styles.Schedule}>
+          <Tabs
+            className={styles.weekTabs}
+            defaultActiveKey="1"
+            items={items}
+            onChange={onChange}
+          />
+        </div>
+
         <OneDaySchedule />
         <Newsletter />
       </main>
