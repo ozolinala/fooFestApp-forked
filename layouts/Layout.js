@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Basket from "@/components/Basket";
 import styles from "@/styles/Home.module.css";
+import {Basketicon} from "@/components/Basketicon.js"
 export default function Layout({ children })  {
   
     return (

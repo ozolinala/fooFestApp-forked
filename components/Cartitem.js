@@ -24,7 +24,7 @@ function addOne(){
   return (
 
     <li>
-        {props.name} 
+        {props.name} DKK {props.price},-
         <button onClick={removeOne}> (-) </button>
         {props.amount}
     <button onClick={addOne}> (+) </button>

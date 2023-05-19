@@ -1,30 +1,19 @@
 import React from 'react'
 import { useContext } from 'react';
 import { StoreContext, DispatchContext } from '@/contexts/storeContext';
-import Cartitem from './Cartitem';
 import Link from 'next/link';
 
-function Basket() {
+export default function Basketicon(props) {
   const state = useContext(StoreContext);
-const dispatch = useContext(DispatchContext);
 
   return (
     <div>
-        <h2>Basket</h2>
-        <ul>
-        {state.data.basket.map((item) => {
-       return <Cartitem {...item}/>
-       })}
-        
-        </ul>
-        <button onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Delete Everything</button>
+      <Link href="./basket">
+      <img src="/pics/ticket.svg" alt='Cart'></img></Link> <p>{props.amount}</p>
     
-    {/* <p><strong>Total amount:</strong>{totalAmount}</p>
-    <p><strong>Total price:</strong>{total},-</p> */}
-
-    <Link href="/checkout">Checkout</Link>
-    </div>
+       <Link href="./checkout">
+       <img src="/pics/user.svg" alt='Profile'></img></Link>
+       </div>
   );
       }
 
-export default Basket;
