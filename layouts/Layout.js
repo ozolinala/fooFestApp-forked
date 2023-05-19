@@ -19,12 +19,12 @@ export default function Layout({ children })  {
         <li>
         <Link href="./tickets">Tickets</Link>
         </li>
+        <li><Basket/></li>
       </ul>
         </nav>
         <main>
         {children}
         </main>
-        <Basket/>
         <div className={styles.Footer}>
       <p>LOGO</p>
       <ul>

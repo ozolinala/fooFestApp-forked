@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
-import myImage from "pages/pics/demo.jpg";
+// import myImage from "pages/pics/demo.jpg";
 import { Newsletter } from "./components/Newsletter";
 import { Footer } from "./components/Footer";
 
@@ -17,9 +17,6 @@ export default function Home({data}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.Header}>
-        <Navbar />
-      </header>
       <main className={styles.Main}>
         <HeroSection />
         <div className={styles.announcement}>
@@ -36,13 +33,13 @@ export default function Home({data}) {
             </p>
           </div>
           <div>
-            <img src={myImage} alt="My Image" />
+            {/* <img src={myImage} alt="My Image" /> */}
           </div>
         </div>
 
         <div className={styles.announcement}>
           <div>
-            <img src={myImage} alt="My Image" />
+            {/* <img src={myImage} alt="My Image" /> */}
           </div>
           <div>
             <h2>THE BEATLES ARE COMING</h2>
@@ -59,9 +56,6 @@ export default function Home({data}) {
         </div>
         <Newsletter />
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }
