@@ -1,0 +1,17 @@
+.OneDaySchedule {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+
+.ArtistInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameAndGenre {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}

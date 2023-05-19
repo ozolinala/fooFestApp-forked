@@ -10,4 +10,6 @@ export const HeroSection = () => {
       <div className={styles.heroGraphics}></div>
     </div>
   );
+
 };
+
