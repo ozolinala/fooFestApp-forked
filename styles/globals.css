@@ -3,6 +3,11 @@
   padding: 0;
   margin: 0;
 }
+/* colors */
+
+:root {
+  --accent-color: #DFFE00;
+}
 
 /*fonts*/
 
@@ -46,7 +51,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    padding:3vh;
 }
 
 a {
