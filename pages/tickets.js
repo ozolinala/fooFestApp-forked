@@ -27,7 +27,7 @@ export default function Home({data}) {
 
 export async function getStaticProps() {
   // Read the JSON file that we made
-  const fileContents = fs.readFileSync('../tickets.json', 'utf8');
+  const fileContents = fs.readFileSync('./tickets.json', 'utf8');
   const data = JSON.parse(fileContents);
   return {
     props: {
