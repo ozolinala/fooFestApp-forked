@@ -13,7 +13,9 @@ export default function Home({data}) {
       </Head>
 <div className='Home'>
   <article>
-    {data.map(ticket =><Ticket{...ticket}/>)}
+    {data.map((ticket) => ( 
+        <Ticket key={ticket.id} {...ticket}/>
+        ))}
     {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
   </article>
 </div>
