@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "@/styles/Basket.module.css";
 import { useContext } from 'react';
 import { DispatchContext } from '@/contexts/storeContext';
 
@@ -23,11 +24,11 @@ function addOne(){
 }
   return (
 
-    <li>
+    <li className={styles.ticket}>
         {props.name} DKK {props.price},-
-        <button onClick={removeOne}> (-) </button>
+        <button className={styles.addRemove} onClick={removeOne}> - </button>
         {props.amount}
-    <button onClick={addOne}> (+) </button>
+    <button className={styles.addRemove} onClick={addOne}> + </button>
     </li>
 
   )

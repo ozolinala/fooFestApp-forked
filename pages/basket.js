@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { StoreContext, DispatchContext } from '@/contexts/storeContext';
 import Cartitem from '/components/Cartitem';
 import Link from 'next/link';
+import styles from "@/styles/Basket.module.css";
 
 function Basket() {
   const state = useContext(StoreContext);
@@ -25,20 +26,20 @@ useEffect(() => {
 }, [data.basket]);
 
   return (
-    <div>
-        <h2>Basket</h2>
+    <div className={styles.wrapper}>
+        <h1>Basket</h1>
         <ul>
         {state.data.basket.map((item) => {
        return <Cartitem {...item}/>
        })}
         
         </ul>
-        <button onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Clear Basket</button>
+        <button className={styles.delete} onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Clear Basket</button>
     
-    <p><strong>Total amount:</strong> {totalAmount}</p>
+    <p><strong>Total amount of tickets:</strong> {totalAmount}</p>
     <p><strong>Total price:</strong> {totalPrice},-</p>
 
-    <Link href="/checkout">Checkout</Link>
+    <Link className={styles.checkout} href="/checkout">Checkout</Link>
     </div>
   );
       }

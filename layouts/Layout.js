@@ -35,7 +35,9 @@ export default function Layout({ children })  {
         {children}
         </main>
         <div className={styles.Footer}>
-      <p>LOGO</p>
+        <Link href="./"> 
+      <img className={styles.Logo} src="/pics/logo.svg" alt='Logo'></img>
+      </Link>
       <ul>
         <li>
         <Link href="./about">About</Link>

@@ -7,8 +7,13 @@
 
 :root {
   --accent-color: #DFFE00;
+  --main-black:#1E1E1E;
 }
-
+h1{
+  color:var(--main-black);
+  font-size: 100px;
+  font-weight: 300;
+}
 /*fonts*/
 
 @font-face {
@@ -55,8 +60,26 @@ body {
 
 a {
   text-decoration: none;
+  color:var(--main-black);
 }
-
+a:hover{
+  opacity:0.7;
+  transition: ease-in 0.2s;
+}
+button{
+  pointer-events: pointer;
+  border:none;
+  padding: 1.5vh;
+  background-color: var(--accent-color);
+  border-radius: 50px;
+  color:black;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+button:hover{
+  background-color: #D4F507;
+  transition: ease-in 0.2s;
+}
 ul {
   list-style: none;
 }
