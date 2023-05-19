@@ -10,13 +10,13 @@ export default function Layout({ children })  {
       <p><Link href="./">Home</Link></p>
       <ul className={styles.navLinks}>
       <li>
+        <Link href="./about">ABOUT</Link>
+        </li>
+      <li>
         <Link href="./lineup">LINE-UP</Link>
         </li>
         <li>
         <Link href="./program">PROGRAM</Link>
-        </li>
-        <li>
-        <Link href="./about">ABOUT</Link>
         </li>
         <li>
         <Link href="./tickets">TICKETS</Link>
