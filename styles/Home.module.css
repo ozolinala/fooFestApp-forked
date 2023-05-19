@@ -43,6 +43,10 @@
   text-align: center;
   padding: 8rem;
 }
+.Logo {
+  width: 60px;
+  height: auto;
+}
 
 .announcement > div {
   flex-basis: 50%;

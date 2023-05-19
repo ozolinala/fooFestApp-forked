@@ -8,7 +8,9 @@ export default function Layout({ children })  {
     return (
         <>
         <nav className={styles.Navbar}>
-      <p><Link href="./">Home</Link></p>
+      <Link href="./"> 
+      <img className={styles.Logo} src="/pics/logo.svg" alt='Logo'></img>
+      </Link>
       <ul className={styles.navLinks}>
       <li>
         <Link href="./about">ABOUT</Link>
