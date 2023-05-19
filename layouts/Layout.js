@@ -1,20 +1,44 @@
 // import Anchor from "./Anchor";
 import Link from 'next/link';
 import Basket from "@/components/Basket";
+import styles from "@/styles/Home.module.css";
+
 export default function Layout({ children })  {
   
     return (
         <>
-        <nav>
-           <Link href="./">Home</Link>
-           <Link href="./about">About</Link>
-           <Link href="./tickets">Tickets</Link>
+        <nav className={styles.Navbar}>
+      <p>LOGO</p>
+      <ul className={styles.navLinks}>
+      <li>
+        <Link href="./">Home</Link>
+        </li>
+        <li>
+        <Link href="./about">About</Link>
+        </li>
+        <li>
+        <Link href="./tickets">Tickets</Link>
+        </li>
+      </ul>
         </nav>
         <main>
         {children}
         </main>
         <Basket/>
-        <footer>&copy;footer</footer>
+        <div className={styles.Footer}>
+      <p>LOGO</p>
+      <ul>
+        <li>
+        <Link href="./about">About</Link>
+        </li>
+        <li>
+          <a href="#">Global</a>
+        </li>
+        <li>
+        <Link href="./tickets">Tickets</Link>
+        </li>
+      </ul>
+    </div>
         </>
     );
 }
