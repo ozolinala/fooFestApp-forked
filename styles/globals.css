@@ -1,14 +1,41 @@
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+/*fonts*/
+
+@font-face {
+  font-family: "FiveSerifRegular";
+  src: url("/fonts/FiveSerif-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "FiveSerifItalic";
+  src: url("/fonts/FiveSerif-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "FiveSerifLightItalic";
+  src: url("/fonts/FiveSerif-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Studio6Regular";
+  src: url("/fonts/Studio6-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Studio6Italic";
+  src: url("/fonts/Studio6-Italic.otf") format("opentype");
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: "Studio6Regular";
 }
 
 body {
