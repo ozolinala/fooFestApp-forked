@@ -14,17 +14,11 @@ export default function Program() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.Header}>
-        <Navbar />
-      </header>
       <main className={styles.Main}>
         <h1>PROGRAM</h1>
         <OneDaySchedule />
         <Newsletter />
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }
