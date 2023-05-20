@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Basket from "@/components/Basket";
 import styles from "@/styles/Home.module.css";
-import {Basketicon} from "@/components/Basketicon.js"
+import Basketicon from "@/components/Basketicon.js"
 export default function Layout({ children })  {
   
     return (
@@ -35,20 +35,44 @@ export default function Layout({ children })  {
         {children}
         </main>
         <div className={styles.Footer}>
+          <div className={styles.Footerlinks}>
+          <ul>
         <Link href="./"> 
       <img className={styles.Logo} src="/pics/logo.svg" alt='Logo'></img>
       </Link>
+      <p>Svinoy bygd, Faroe Islands</p>
+      <p>+45 85 85 85 85</p>
+<p>info@foofest.dk</p>
+<br></br>
+
+</ul>
       <ul>
         <li>
-        <Link href="./about">About</Link>
+        <Link href="./about">ABOUT</Link>
         </li>
         <li>
-          <a href="#">Global</a>
+          <a href="#">PROGRAM</a>
         </li>
         <li>
-        <Link href="./tickets">Tickets</Link>
+        <Link href="./tickets">TICKETS</Link>
         </li>
       </ul>
+      <ul>
+        <li>
+        <Link href="./about">FAQ</Link>
+        </li>
+        <li>
+          <a href="#">TERMS & CONDITIONS</a>
+        </li>
+        <li>
+          <a href="#">PRIVACY POLICY</a>
+        </li>
+        <li>
+        <Link href="./tickets">COOKIE POLICY</Link>
+        </li>
+      </ul>
+      </div>
+      <p>© This is a student project website. 2023</p>
     </div>
         </>
     );

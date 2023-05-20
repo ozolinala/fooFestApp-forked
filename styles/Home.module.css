@@ -53,9 +53,20 @@
   flex-basis: 50%;
 }
 
-.Footer {
+.Footerlinks {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  padding: 3vh;
+  padding: 5vh 3vh 3vh 0vh;
+  color:white;
+  background-color: var(--main-black);
+}
+.Footer{
+  padding: 0vh 0vh 2vh 3vh;
+  margin-top: 7vh;
+  color:white;
+  background-color: var(--main-black);
+}
+.Footerlinks li a{
+  color:white;
 }
