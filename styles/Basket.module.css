@@ -1,6 +1,18 @@
 .wrapper{
     padding: 5vh;
 }
+.wrapper li{
+    padding-bottom: 2vh;
+}
+.wrapper form input, .wrapper form label{
+    margin-left: 2vh;
+}
+.wrapper form p{
+    padding-top: 1vh;
+}
+.total{
+    padding-top: 5vh;
+}
 .ticket{
     padding-top: 2vh;
     padding-bottom: 2vh;
@@ -12,7 +24,13 @@
     border-radius: 50px;
     color:var(--main-black);
 }
-
+.ticketstyle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20%;
+    padding-top: 5vh;
+}
 .addRemove{
     padding: 1vh;
     height:30px;

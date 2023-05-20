@@ -1,11 +1,29 @@
 
 import Head from 'next/head'
 import { StoreContext } from '@/contexts/storeContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import styles from "@/styles/Basket.module.css";
+
 
 export default function Checkout() {
-  const state = useContext(StoreContext);    
-  const {basket} =state;
+  const state = useContext(StoreContext);   
+  const [totalAmount, setTotalAmount] = useState(0);
+const [totalPrice, setTotalPrice] = useState(0);
+const { data } = useContext(StoreContext);
+
+useEffect(() => {
+  let amount = 0;
+  let price = 0;
+
+  data.basket.forEach((item) => {
+    amount += item.amount;
+    price += item.price * item.amount;
+  });
+
+  setTotalAmount(amount);
+  setTotalPrice(price);
+}, [data.basket]); 
+
 
   return (
     <>
@@ -15,7 +33,9 @@ export default function Checkout() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-<div className='Checkout'>
+      
+<div className={styles.wrapper}>
+  <h1>Checkout</h1>
   <ul>
     {state.data.basket.map((item)=>(
     <li>
@@ -30,8 +50,12 @@ export default function Checkout() {
     <label>E-mail
         <input type="email" name="email" required/>
     </label>
+    <div className={styles.total}>
+    <p><strong>Total amount of tickets:</strong> {totalAmount}</p>
+    <p><strong>Total price:</strong> DKK {totalPrice},-</p></div>
     <button>Buy now</button>
 </form>
+
 
 </div>
     </>
