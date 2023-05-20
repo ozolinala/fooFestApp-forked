@@ -38,11 +38,15 @@
 .Newsletter {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   margin: auto;
   align-items: center;
   text-align: center;
   padding: 8rem;
+}
+.Newsletter form input{
+  padding: 2vh;
+  margin-right: 2vh;
 }
 .Logo {
   width: 60px;

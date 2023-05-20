@@ -10,6 +10,14 @@
 .wrapper form p{
     padding-top: 1vh;
 }
+.name{
+    display: inline;
+    margin-right: 10%;
+}
+.price{
+    display: inline;
+    margin-right: 3%;
+}
 .total{
     padding-top: 5vh;
 }

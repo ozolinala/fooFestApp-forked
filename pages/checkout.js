@@ -45,10 +45,10 @@ useEffect(() => {
   </ul>
 <form>
     <label>Name
-        <input type="text" name="name" required/>
+        <input type="text" name="name" placeholder="Write here.."required/>
     </label>
     <label>E-mail
-        <input type="email" name="email" required/>
+        <input type="email" name="email" placeholder="Write here.." required/>
     </label>
     <div className={styles.total}>
     <p><strong>Total amount of tickets:</strong> {totalAmount}</p>

@@ -8,6 +8,7 @@
 :root {
   --accent-color: #DFFE00;
   --main-black:#1E1E1E;
+  --grey:#EFEFF0;
 }
 h1{
   color:var(--main-black);
@@ -21,10 +22,19 @@ h2{
   margin-bottom: 4vh;
 }
 h3{
+  font-size: 32px;
+  margin-bottom: 4vh;
+}
+h4{
   font-size: 22px;
   margin-bottom: 4vh;
 }
-
+form input{
+  border: none;
+background-color: var(--grey);
+padding: 1vh;
+border-radius: 8px;
+}
 /*fonts*/
 
 @font-face {
@@ -80,7 +90,7 @@ a:hover{
 button{
   pointer-events: pointer;
   border:none;
-  padding: 1.5vh;
+  padding: 2vh 4vh 2vh 4vh;
   background-color: var(--accent-color);
   border-radius: 50px;
   color:black;

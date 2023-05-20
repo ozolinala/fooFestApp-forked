@@ -25,7 +25,7 @@ function addOne(){
   return (
 
     <li className={styles.ticket}>
-        {props.name} DKK {props.price},-
+       <h4 className={styles.name}> {props.name} </h4> <p className={styles.price}> DKK {props.price},-</p>
         <button className={styles.addRemove} onClick={removeOne}> - </button>
         {props.amount}
     <button className={styles.addRemove} onClick={addOne}> + </button>

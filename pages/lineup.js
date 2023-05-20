@@ -19,7 +19,7 @@ export default function Home({data}) {
 </div>
 <div className={styles.wrapper}>
     <h1 className={styles.lineup}>LINE-UP</h1>
-    <h3>01.01 ⸺ 31.21.2023</h3>
+    <h4>01.01 ⸺ 31.21.2023</h4>
     <div className={styles.artistLineup}>
     <p className={styles.rightAligned}>Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name</p>
 </div></div>
