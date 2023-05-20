@@ -52,7 +52,20 @@
 .announcement > div {
   flex-basis: 50%;
 }
-
+.written{
+  font-family:"FiveSerifLightItalic";
+  display: inline;
+  }
+  .about{
+   font-size: 17px;
+display: inline;
+    }
+.landingLetters{
+  margin-bottom: 15%;
+}
+.landingLetters h2{
+  text-justify: inter-character;
+}
 .Footerlinks {
   display: flex;
   justify-content: space-between;

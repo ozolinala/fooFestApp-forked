@@ -34,12 +34,11 @@ useEffect(() => {
        })}
         
         </ul>
-        <button className={styles.delete} onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Clear Basket</button>
     
     <p><strong>Total amount of tickets:</strong> {totalAmount}</p>
     <p><strong>Total price:</strong> DKK {totalPrice},-</p>
 
-    <Link className={styles.checkout} href="/checkout">Checkout</Link>
+    <button className={styles.delete} onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Clear Basket</button>  <Link className={styles.checkout} href="/checkout">Checkout</Link>
     </div>
   );
       }

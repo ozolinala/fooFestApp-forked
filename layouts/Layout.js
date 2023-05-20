@@ -51,7 +51,7 @@ export default function Layout({ children })  {
         <Link href="./about">ABOUT</Link>
         </li>
         <li>
-          <a href="#">PROGRAM</a>
+          <a href="./program">PROGRAM</a>
         </li>
         <li>
         <Link href="./tickets">TICKETS</Link>
@@ -59,7 +59,7 @@ export default function Layout({ children })  {
       </ul>
       <ul>
         <li>
-        <Link href="./about">FAQ</Link>
+        <Link href="#">FAQ</Link>
         </li>
         <li>
           <a href="#">TERMS & CONDITIONS</a>
@@ -68,7 +68,7 @@ export default function Layout({ children })  {
           <a href="#">PRIVACY POLICY</a>
         </li>
         <li>
-        <Link href="./tickets">COOKIE POLICY</Link>
+        <Link href="#">COOKIE POLICY</Link>
         </li>
       </ul>
       </div>

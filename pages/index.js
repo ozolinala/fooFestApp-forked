@@ -1,12 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
-// import myImage from "pages/pics/demo.jpg";
 import { Newsletter } from "./components/Newsletter";
-import { Footer } from "./components/Footer";
+
 
 export default function Home({data}) {
   return (
@@ -19,6 +15,7 @@ export default function Home({data}) {
       </Head>
       <main className={styles.Main}>
         <HeroSection />
+        <div className={styles.landingLetters}> <h2> <div className={styles.about}> (ABOUT) </div><div className={styles.written}>foo</div>fest ⸺ is the gateway to a mesmerizing journey where the Nordic summer ignites, the midnight sun dances, and the music takes center stage, enveloping you in an unforgettable celebration of sound and sensation.</h2> </div>
         <div className={styles.announcement}>
           <div>
             <h2>THE BEATLES ARE COMING</h2>

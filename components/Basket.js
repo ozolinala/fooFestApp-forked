@@ -17,12 +17,12 @@ const dispatch = useContext(DispatchContext);
        })}
         
         </ul>
-        <button onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Delete Everything</button>
+
     
     {/* <p><strong>Total amount:</strong>{totalAmount}</p>
     <p><strong>Total price:</strong>{total},-</p> */}
 
-    <Link href="/checkout">Checkout</Link>
+<button onClick={() =>dispatch({action:"EMPTY_BASKET"})}>Delete Everything</button>  <Link href="/checkout">Checkout</Link>
     </div>
   );
       }
