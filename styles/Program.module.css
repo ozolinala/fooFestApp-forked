@@ -24,3 +24,15 @@
 .weekTabs {
   border-color: var(--accent-color);
 }
+
+.ActInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+.ActInfo {
+  display: flex;
+  gap: 2rem;
+}
