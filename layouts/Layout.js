@@ -35,17 +35,16 @@ export default function Layout({ children })  {
         {children}
         </main>
         <div className={styles.Footer}>
-          <div className={styles.Footerlinks}>
-          <ul>
-        <Link href="./"> 
-      <img className={styles.Logo} src="/pics/logo.svg" alt='Logo'></img>
-      </Link>
+          <div className={styles.Footerbox}>
+          <div className={styles.leftFooter}>
+      <img className={styles.longLogo} src="/pics/longLogo.svg" alt='Logo'></img>
       <p>Svinoy bygd, Faroe Islands</p>
-      <p>+45 85 85 85 85</p>
-<p>info@foofest.dk</p>
+      <a href = "tel: +45 85 85 85 85">+45 85 85 85 85</a> <br></br>
+<a href = "mailto: abc@example.com">info@foofest.dk</a>
 <br></br>
 
-</ul>
+</div>
+<div>
       <ul>
         <li>
         <Link href="./about">ABOUT</Link>
@@ -56,7 +55,7 @@ export default function Layout({ children })  {
         <li>
         <Link href="./tickets">TICKETS</Link>
         </li>
-      </ul>
+      </ul></div> <div>
       <ul>
         <li>
         <Link href="#">FAQ</Link>
@@ -72,7 +71,8 @@ export default function Layout({ children })  {
         </li>
       </ul>
       </div>
-      <p>© This is a student project website. 2023</p>
+      </div>
+      <p className={styles.copyright}>© This is a student project website. 2023</p>
     </div>
         </>
     );

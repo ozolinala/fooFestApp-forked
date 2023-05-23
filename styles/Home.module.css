@@ -52,6 +52,11 @@
   width: 60px;
   height: auto;
 }
+.longLogo {
+  width: 120px;
+  margin-bottom: 4vh;
+  height: auto;
+}
 
 .announcement > div {
   flex-basis: 50%;
@@ -70,13 +75,22 @@ display: inline;
 .landingLetters h2{
   text-justify: inter-character;
 }
-.Footerlinks {
+.Footerbox {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  gap:3vh;
+  flex-wrap: wrap;
   padding: 5vh 3vh 3vh 0vh;
   color:white;
   background-color: var(--main-black);
+}
+.leftFooter{
+  width: 60%;
+}
+.copyright{
+  font-size:12px;
+  margin-top: 4vh;
 }
 .Footer{
   padding: 0vh 0vh 2vh 3vh;
@@ -84,6 +98,24 @@ display: inline;
   color:white;
   background-color: var(--main-black);
 }
-.Footerlinks li a{
+.Footer a{
   color:white;
+  line-height: 1.5rem;
+}
+.Footerbox ul li a{
+  color:white;
+  line-height: 2rem;
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .leftFooter{
+    width: auto;
+    margin-bottom: 6vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* CSS styles for phones */
+  .leftFooter{
+    width: 100%;
+    margin-bottom: 6vh;
+  }
 }
