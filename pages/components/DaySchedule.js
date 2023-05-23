@@ -16,7 +16,7 @@ function DaySchedule({ day, venues }) {
     <List
       dataSource={filteredSchedule}
       renderItem={(item) => (
-        <List.Item>
+        <List.Item className={styles.ListItem}>
           <h2>{item.venue}</h2>
           <div className={styles.ActInfoContainer}>
             {item.events.length > 0 ? (
