@@ -17,7 +17,7 @@ function DaySchedule({ day, venues }) {
       dataSource={filteredSchedule}
       renderItem={(item) => (
         <List.Item>
-          <h2>{item.venue}</h2>
+          <h3>{item.venue}</h3>
           <div className={styles.ActInfoContainer}>
             {item.events.length > 0 ? (
               item.events.map((event, index) => (
