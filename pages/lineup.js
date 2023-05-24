@@ -1,11 +1,8 @@
-import Head from 'next/head'
-import Ticket from '../components/Ticket';
+import Head from "next/head";
+import Ticket from "../components/Ticket";
 import styles from "@/styles/Lineup.module.css";
-import image1 from '../public/pics';
-import image2 from '../images/image2.jpg';
-import image3 from '../images/image3.jpg';
 
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -14,18 +11,35 @@ export default function Home({data}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-<div className={styles.wrapper}>
-  <h1> <div className={styles.written}>Featured</div>  Artists</h1>
-</div>
-<div className={styles.fleximages}>
-
-</div>
-<div className={styles.wrapper}>
-    <h1 className={styles.lineup}>LINE-UP</h1>
-    <h4>01.01 ⸺ 31.21.2023</h4>
-    <div className={styles.artistLineup}>
-    <p className={styles.rightAligned}>Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name, Artist Name</p>
-</div></div>
+      <div className={styles.wrapper}>
+        <h1>
+          {" "}
+          <span className={styles.written}>Featured</span> Artists
+        </h1>
+      </div>
+      <div className={styles.fleximages}>
+        <img src="pics/artist1.png" alt={`artist1`} />
+      </div>
+      <div className={styles.wrapper}>
+        <h1 className={styles.lineup}>LINE-UP</h1>
+        <h4>01.01 ⸺ 31.21.2023</h4>
+        <div className={styles.artistLineup}>
+          <p className={styles.rightAligned}>
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
+            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name
+          </p>
+        </div>
+      </div>
     </>
   );
 }
