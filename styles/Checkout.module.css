@@ -1,0 +1,12 @@
+.CampingType {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.CampingFlex {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-around;
+}
