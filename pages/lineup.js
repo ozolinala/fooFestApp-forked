@@ -1,8 +1,26 @@
 import Head from "next/head";
 import Ticket from "../components/Ticket";
 import styles from "@/styles/Lineup.module.css";
+import { useState, useEffect } from "react";
 
-export default function Home({ data }) {
+export default function LineUp() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://tan-chipped-baboon.glitch.me/bands"
+        );
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <Head>
@@ -17,27 +35,29 @@ export default function Home({ data }) {
           <span className={styles.written}>Featured</span> Artists
         </h1>
       </div>
-      <div className={styles.fleximages}>
-        <img src="pics/artist1.png" alt={`artist1`} />
+      <div className={styles.gridImages}>
+        <img src="pics/artist1.webp" alt={`artist1`} />
+        <p>&nbsp;</p>
+        <img src="pics/artist2.webp" alt={`artist2`} />
+        <p>&nbsp;</p>
+        <img src="pics/artist3.webp" alt={`artist3`} />
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <img src="pics/artist4.webp" alt={`artist4`} />
+        <p>&nbsp;</p>
+        <img src="pics/artist5.webp" alt={`artist5`} />
+        <p>&nbsp;</p>
+        <img src="pics/artist6.webp" alt={`artist6`} />
       </div>
       <div className={styles.wrapper}>
         <h1 className={styles.lineup}>LINE-UP</h1>
         <h4>01.01 ⸺ 31.21.2023</h4>
         <div className={styles.artistLineup}>
-          <p className={styles.rightAligned}>
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name,
-            Artist Name, Artist Name, Artist Name, Artist Name, Artist Name
-          </p>
+          {data.map((item) => (
+            <p className={styles.rightAligned} key={item.id}>
+              {item.name}
+            </p>
+          ))}
         </div>
       </div>
     </>

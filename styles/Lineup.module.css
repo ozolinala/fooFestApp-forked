@@ -1,20 +1,29 @@
-.written{
-    font-family:"FiveSerifLightItalic";
-    display: inline;
-    }
-    .wrapper{
-        padding: 5vh;
-    }
+.written {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+}
+.wrapper {
+  padding: 5vh;
+}
 
-    .lineup{
-        margin: 0;
-    }
-   
-    .artistLineup{
-        line-height: 2;
-        display: flex;
-        justify-content: flex-end;
-      }
-      .rightAligned{
-        max-width: 45%;
-      }
+.lineup {
+  margin: 0;
+}
+
+.artistLineup {
+  line-height: 2;
+  
+}
+.rightAligned {
+  max-width: 45%;
+}
+
+.gridImages {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.gridImages img {
+  width: 100%;
+}
