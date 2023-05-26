@@ -12,7 +12,9 @@
 
 .artistLineup {
   line-height: 2;
-  
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 .rightAligned {
   max-width: 45%;
