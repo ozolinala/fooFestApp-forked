@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Button, message, Steps, theme } from "antd";
 import SelectCamping from "./SelectCamping.js";
+import styles from "@/styles/Checkout.module.css";
 
 const steps = [
   {
@@ -53,13 +54,17 @@ function CheckoutTest() {
   };
   return (
     <>
-      <Steps current={current} items={items} />
-      <div style={contentStyle}>{steps[current].content}</div>
-      <div
-        style={{
-          marginTop: 24,
-        }}
-      >
+      <div className={styles.CheckoutButtons}>
+        {current > 0 && (
+          <Button
+            style={{
+              margin: "0 8px",
+            }}
+            onClick={() => prev()}
+          >
+            Previous
+          </Button>
+        )}
         {current < steps.length - 1 && (
           <Button type="primary" onClick={() => next()}>
             Next
@@ -73,17 +78,9 @@ function CheckoutTest() {
             Done
           </Button>
         )}
-        {current > 0 && (
-          <Button
-            style={{
-              margin: "0 8px",
-            }}
-            onClick={() => prev()}
-          >
-            Previous
-          </Button>
-        )}
       </div>
+      <Steps className={styles.Steps} current={current} items={items} />
+      <div style={contentStyle}>{steps[current].content}</div>
     </>
   );
 }
