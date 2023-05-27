@@ -11,6 +11,11 @@
   color: #1e1e1e;
 }
 
+.CampingType img {
+  padding: 3rem;
+  align-self: center;
+}
+
 .CampingType:active {
   background-color: #dffe00;
 }

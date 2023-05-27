@@ -8,6 +8,7 @@ function SelectCamping() {
       <div className={styles.CampingTypeFlex}>
         <div className={styles.CampingType}>
           <p>01</p>
+          <img src="pics/green.svg" alt={`artist1`} />
           <h3>Green camping</h3>
           <p>
             The tents are made from recycled materials and FooFest loves
@@ -17,6 +18,7 @@ function SelectCamping() {
         </div>
         <div className={styles.CampingType}>
           <p>02</p>
+          <img src="pics/tent.svg" alt={`artist1`} />
           <h3>Tent Set-up Service</h3>
           <p>
             The crew will set up tents for you. The tents are included in the
