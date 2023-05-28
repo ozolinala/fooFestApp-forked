@@ -10,15 +10,15 @@ const steps = [
   },
   {
     title: "Select camping",
-    content: <SelectCamping />,
+    content: "2",
   },
   {
     title: "Select optional",
-    content: "Last-content",
+    content: <SelectCamping />,
   },
   {
     title: "Booking information",
-    content: "Last-content",
+    content: "yo",
   },
   {
     title: "Payment",
