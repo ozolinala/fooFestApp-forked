@@ -67,40 +67,48 @@ export default function Checkout() {
                   <p>Ticket {index + 1}</p>
                   <div className={styles.formContainer}>
                     <div>
-                      <label>Name</label>
-                      <input
-                        type="text"
-                        name={`name-${item.id}-${index}`}
-                        placeholder="Write here.."
-                        required
-                        onChange={(e) => handleInputChange(e, item)}
-                      />
-                      <label>Last name</label>
-                      <input
-                        type="text"
-                        name={`name-${item.id}-${index}`}
-                        placeholder="Write here.."
-                        required
-                        onChange={(e) => handleInputChange(e, item)}
-                      />
+                      <div className={styles.labelAndInput}>
+                        <label>Name</label>
+                        <input
+                          type="text"
+                          name={`name-${item.id}-${index}`}
+                          placeholder="Write here.."
+                          required
+                          onChange={(e) => handleInputChange(e, item)}
+                        />
+                      </div>
+                      <div className={styles.labelAndInput}>
+                        <label>Last name</label>
+                        <input
+                          type="text"
+                          name={`name-${item.id}-${index}`}
+                          placeholder="Write here.."
+                          required
+                          onChange={(e) => handleInputChange(e, item)}
+                        />
+                      </div>
                     </div>
                     <div>
-                      <label>E-mail</label>
-                      <input
-                        type="email"
-                        name={`email-${item.id}-${index}`}
-                        placeholder="Write here.."
-                        required
-                        onChange={(e) => handleInputChange(e, item)}
-                      />
-                      <label>Date of birth</label>
-                      <input
-                        type="date"
-                        name={`email-${item.id}-${index}`}
-                        placeholder="Write here.."
-                        required
-                        onChange={(e) => handleInputChange(e, item)}
-                      />
+                      <div className={styles.labelAndInput}>
+                        <label>E-mail</label>
+                        <input
+                          type="email"
+                          name={`email-${item.id}-${index}`}
+                          placeholder="Write here.."
+                          required
+                          onChange={(e) => handleInputChange(e, item)}
+                        />
+                      </div>
+                      <div className={styles.labelAndInput}>
+                        <label>Date of birth</label>
+                        <input
+                          type="date"
+                          name={`email-${item.id}-${index}`}
+                          placeholder="Write here.."
+                          required
+                          onChange={(e) => handleInputChange(e, item)}
+                        />
+                      </div>
                     </div>
                   </div>
                 </form>
