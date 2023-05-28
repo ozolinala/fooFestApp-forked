@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Button, message, Steps, theme } from "antd";
 import SelectCamping from "./SelectCamping.js";
+import FormMapper from "./FormMapper.js";
 import styles from "@/styles/Checkout.module.css";
 
 const steps = [
@@ -18,7 +19,7 @@ const steps = [
   },
   {
     title: "Booking information",
-    content: "yo",
+    content: <FormMapper />,
   },
   {
     title: "Payment",
