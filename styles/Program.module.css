@@ -1,28 +1,15 @@
-.OneDaySchedule {
-  display: flex;
-  justify-content: space-between;
-  width: 95%;
-  margin: auto;
-}
-
 .ArtistInfo {
   display: flex;
   flex-direction: column;
 }
 
-.nameAndGenre {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-}
-
 .Schedule {
-  display: flex;
-  justify-content: center;
+  width: 60%;
+  margin: auto;
 }
 
 .weekTabs {
-  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .ActInfoContainer {
@@ -35,4 +22,29 @@
 .ActInfo {
   display: flex;
   gap: 2rem;
+  font-size: 18px;
+  align-items: center;
+}
+
+.written {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+}
+
+.Main {
+  padding: 5vh;
+}
+
+@media (max-width: 768px) {
+  .verticalSchedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+  }
+
+  .Schedule {
+    width: 100%;
+    margin: auto;
+  }
 }
