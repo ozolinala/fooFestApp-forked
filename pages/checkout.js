@@ -1,29 +1,40 @@
-
-import Head from 'next/head'
-import { StoreContext } from '@/contexts/storeContext';
-import { useContext, useEffect, useState } from 'react';
+import Head from "next/head";
+import { StoreContext } from "@/contexts/storeContext";
+import { useContext, useEffect, useState } from "react";
 import styles from "@/styles/Basket.module.css";
 
-
 export default function Checkout() {
-  const state = useContext(StoreContext);   
+  const state = useContext(StoreContext);
   const [totalAmount, setTotalAmount] = useState(0);
-const [totalPrice, setTotalPrice] = useState(0);
-const { data } = useContext(StoreContext);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const { data } = useContext(StoreContext);
 
-useEffect(() => {
-  let amount = 0;
-  let price = 0;
+  useEffect(() => {
+    let amount = 0;
+    let price = 0;
 
-  data.basket.forEach((item) => {
-    amount += item.amount;
-    price += item.price * item.amount;
-  });
+    data.basket.forEach((item) => {
+      amount += item.amount;
+      price += item.price * item.amount;
+    });
 
-  setTotalAmount(amount);
-  setTotalPrice(price);
-}, [data.basket]); 
+    setTotalAmount(amount);
+    setTotalPrice(price);
+  }, [data.basket]);
 
+  const handleInputChange = (event, item) => {
+    // Update the item details in the context
+    const updatedBasket = data.basket.map((basketItem) => {
+      if (basketItem.id === item.id) {
+        return {
+          ...basketItem,
+          [event.target.name]: event.target.value,
+        };
+      }
+      return basketItem;
+    });
+    state.updateBasket(updatedBasket);
+  };
 
   return (
     <>
@@ -33,31 +44,72 @@ useEffect(() => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-<div className={styles.wrapper}>
-  <h1>Checkout</h1>
-  <ul>
-    {state.data.basket.map((item)=>(
-    <li>
-        {item.name} X {item.amount}
-        </li>
-        ))}
-  </ul>
-<form>
-    <label>Name
-        <input type="text" name="name" placeholder="Write here.."required/>
-    </label>
-    <label>E-mail
-        <input type="email" name="email" placeholder="Write here.." required/>
-    </label>
-    <div className={styles.total}>
-    <p><strong>Total amount of tickets:</strong> {totalAmount}</p>
-    <p><strong>Total price:</strong> DKK {totalPrice},-</p></div>
-    <button>Buy now</button>
-</form>
 
-
-</div>
+      <div className={styles.wrapper}>
+        <h1>Checkout</h1>
+        <ul>
+          {state.data.basket.map((item) => (
+            <li key={item.id}>
+              {item.name} X {item.amount}
+              {[...Array(item.amount)].map((_, index) => (
+                <form
+                  className={styles.userInfoForm}
+                  key={`${item.id}-${index}`}
+                >
+                  <p>{item.id}</p>
+                  <div className={styles.formContainer}>
+                    <div>
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        name={`name-${item.id}-${index}`}
+                        placeholder="Write here.."
+                        required
+                        onChange={(e) => handleInputChange(e, item)}
+                      />
+                      <label>Last name</label>
+                      <input
+                        type="text"
+                        name={`name-${item.id}-${index}`}
+                        placeholder="Write here.."
+                        required
+                        onChange={(e) => handleInputChange(e, item)}
+                      />
+                    </div>
+                    <div>
+                      <label>E-mail</label>
+                      <input
+                        type="email"
+                        name={`email-${item.id}-${index}`}
+                        placeholder="Write here.."
+                        required
+                        onChange={(e) => handleInputChange(e, item)}
+                      />
+                      <label>Date of birth</label>
+                      <input
+                        type="date"
+                        name={`email-${item.id}-${index}`}
+                        placeholder="Write here.."
+                        required
+                        onChange={(e) => handleInputChange(e, item)}
+                      />
+                    </div>
+                  </div>
+                </form>
+              ))}
+            </li>
+          ))}
+        </ul>
+        <div className={styles.total}>
+          <p>
+            <strong>Total amount of tickets:</strong> {totalAmount}
+          </p>
+          <p>
+            <strong>Total price:</strong> DKK {totalPrice},-
+          </p>
+        </div>
+        <button>Buy now</button>
+      </div>
     </>
   );
 }
