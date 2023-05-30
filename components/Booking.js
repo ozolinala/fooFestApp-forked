@@ -1,5 +1,6 @@
 import styles from "@/styles/Booking.module.css";
 import React from "react";
+import { useState, useEffect } from "react";
 import BookingItem from "@/components/BookingItem";
 import { v4 as uuidv4 } from "uuid";
 
@@ -11,9 +12,18 @@ export default function Booking(props) {
     { type: "Green Camping", price: 249, id: 4 },
   ]; */
 
+  const [total, setTotal] = useState(99);
+
   const items = [...props.products, { name: "Booking Fee", type: "Fee", price: 99, id: uuidv4() }];
 
-  /* {items.map((item)=>{return <BookingItem />})} */
+  useEffect(() => {
+    setTotal(99);
+    props.products.forEach((product) => {
+      if (product.price) {
+        setTotal((old) => (old += product.price));
+      }
+    });
+  }, [props.products]);
 
   return (
     <div className={styles.Booking}>
@@ -25,7 +35,7 @@ export default function Booking(props) {
       <p>
         <span>Total</span>
         <span>
-          <strong>DKK 1234,-</strong>
+          <strong>DKK {total},-</strong>
         </span>
       </p>
     </div>
