@@ -1,23 +1,14 @@
 import Head from "next/head";
 import { StoreContext } from "@/contexts/storeContext";
 import { useContext, useEffect, useState } from "react";
-import Head from "next/head";
-import { StoreContext } from "@/contexts/storeContext";
-import { useContext, useEffect, useState } from "react";
 import styles from "@/styles/Basket.module.css";
 
 export default function Checkout() {
   const state = useContext(StoreContext);
-  const state = useContext(StoreContext);
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const { data } = useContext(StoreContext);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const { data } = useContext(StoreContext);
 
-  useEffect(() => {
-    let amount = 0;
-    let price = 0;
   useEffect(() => {
     let amount = 0;
     let price = 0;
@@ -26,14 +17,7 @@ export default function Checkout() {
       amount += item.amount;
       price += item.price * item.amount;
     });
-    data.basket.forEach((item) => {
-      amount += item.amount;
-      price += item.price * item.amount;
-    });
 
-    setTotalAmount(amount);
-    setTotalPrice(price);
-  }, [data.basket]);
     setTotalAmount(amount);
     setTotalPrice(price);
   }, [data.basket]);
@@ -145,4 +129,3 @@ export default function Checkout() {
     </>
   );
 }
-
