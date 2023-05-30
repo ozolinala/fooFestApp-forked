@@ -15,7 +15,7 @@ export default function Layout({ children }) {
     <>
       <nav className={styles.Navbar}>
         <Link href="./">
-          <img className={styles.Logo} src="/pics/logo.svg" alt="Logo"></img>
+          <img className={styles.Logo} src="/pics/fooLogo.svg" alt="Logo"></img>
         </Link>
         <ul className={styles.navLinks}>
           <li>
