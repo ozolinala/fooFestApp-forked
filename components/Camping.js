@@ -2,6 +2,7 @@ import styles from "@/styles/Camping.module.css";
 import React from "react";
 import CampingArea from "@/components/CampingArea";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Camping(props) {
   const [selectedCamping, setSelectedCamping] = useState({
@@ -16,27 +17,27 @@ export default function Camping(props) {
     {
       area: "Nilfheim",
       available: 1,
-      id: 1,
+      id: uuidv4(),
     },
     {
       area: "Svartheim",
       available: 2,
-      id: 2,
+      id: uuidv4(),
     },
     {
       area: "Helheim",
       available: 3,
-      id: 3,
+      id: uuidv4(),
     },
     {
       area: "Muspelheim",
       available: 4,
-      id: 4,
+      id: uuidv4(),
     },
     {
       area: "Alfheim",
       available: 5,
-      id: 5,
+      id: uuidv4(),
     },
   ];
 

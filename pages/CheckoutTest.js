@@ -4,6 +4,7 @@ import SelectOptional from "./components/SelectOptional.js";
 import styles from "@/styles/Checkout.module.css";
 import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
+import { v4 as uuidv4 } from "uuid";
 
 function CheckoutTest() {
   /* data */

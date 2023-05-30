@@ -4,7 +4,7 @@ import styles from "@/styles/BookingItem.module.css";
 export default function BookingItem(props) {
   return (
     <div className={styles.BookingItem}>
-      <span>{props.type}</span>
+      <span>{props.name}</span>
       <span
         style={{
           visibility: props.item.amount ? "visible" : "hidden",

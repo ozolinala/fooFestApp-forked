@@ -12,12 +12,8 @@ export default function CampingArea(props) {
       });
 
       props.setProducts(campingInfo);
-
-      console.log(props.products);
     } else {
       props.setProducts((old) => old.concat(props.selectedCamping));
-
-      console.log(props.products);
     }
   }
 
@@ -25,8 +21,8 @@ export default function CampingArea(props) {
     <div
       className={styles.CampingArea}
       style={{
-        backgroundColor: props.selectedCamping.id === props.id ? "#E3FFB7" : "",
-        border: props.selectedCamping.id === props.id ? "3px solid black" : "",
+        backgroundColor: props.selectedCamping.name === props.area ? "#E3FFB7" : "",
+        border: props.selectedCamping.name === props.area ? "3px solid black" : "",
       }}
       onClick={() => {
         props.setSelectedCamping({ name: props.area, type: "Camping", id: props.id });

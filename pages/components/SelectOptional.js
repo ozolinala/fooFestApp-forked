@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import styles from "@/styles/Checkout.module.css";
-import Basket from "@/components/Basket";
+import { v4 as uuidv4 } from "uuid";
 
 function SelectOptional(props) {
   const [selectedOptional, setSelectedOptional] = useState([]);
 
-  function handleClick(name, price) {
+  function handleClick(name, price, id) {
     const option = {
       name,
       price,
       type: "Optional",
+      id,
     };
 
     if (props.products.some((product) => product["name"] === name)) {
@@ -37,7 +38,7 @@ function SelectOptional(props) {
         }}
         onClick={() => {
           setSelectedOptional((old) => old.concat("green"));
-          handleClick("Green Camping", 249);
+          handleClick("Green Camping", 249, uuidv4());
         }}
       >
         <p>01</p>
@@ -54,7 +55,7 @@ function SelectOptional(props) {
         }}
         onClick={() => {
           setSelectedOptional((old) => old.concat("setup"));
-          handleClick("Set-up Service", 299);
+          handleClick("Set-up Service", 299, uuidv4());
         }}
       >
         <p>02</p>
