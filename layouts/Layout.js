@@ -1,9 +1,13 @@
-// import Anchor from "./Anchor";
+
 import Link from "next/link";
 import { Badge } from 'antd';
 import styles from "@/styles/Home.module.css";
 import { useContext } from "react";
+import { useRouter } from "next/router";
 import { StoreContext } from '@/contexts/storeContext';
+
+
+
 export default function Layout({ children }) {
   const badgeStyle = {
     backgroundColor: '#DFFE08',
@@ -11,35 +15,41 @@ export default function Layout({ children }) {
   };
   const { data } = useContext(StoreContext);
   const itemCount = data.basket.reduce((total, item) => total + item.amount, 0);  // const CartIcon = ({ itemCount }) 
+  const router = useRouter();
+  const isHomePage = router.pathname === "/";
+  const logoVisibility = isHomePage ? "hidden" : "visible";
+  const textColor = isHomePage ? "white" : "var(--main-black)";
+  const svgColor = isHomePage ? "white" : "var(--main-black)";
+  
   return (
     <>
       <nav className={styles.Navbar}>
         <Link href="./">
-          <img className={styles.Logo} src="/pics/fooLogo.svg" alt="Logo"></img>
+          <img className={styles.Logo} src="/pics/fooLogo.svg" alt="Logo" style={{ visibility: logoVisibility }}></img>
         </Link>
         <ul className={styles.navLinks}>
           <li>
-            <Link href="./about">ABOUT</Link>
+            <Link href="./about"> <a style={{ color: textColor }}>ABOUT</a></Link>
           </li>
           <li>
-            <Link href="./lineup">LINE-UP</Link>
+            <Link href="./lineup"> <a style={{ color: textColor }}>LINE-UP</a></Link>
           </li>
           <li>
-            <Link href="./program">PROGRAM</Link>
+            <Link href="./program"> <a style={{ color: textColor }}>PROGRAM</a></Link>
           </li>
           <li>
-            <Link href="./tickets">TICKETS</Link>
+            <Link href="./tickets"> <a style={{ color: textColor }}>TICKETS</a></Link>
           </li>
         </ul>
         <div className={styles.navIcons}>
     <Badge count={itemCount} style={badgeStyle}>
    <Link href="./basket">
-            <img src="/pics/ticket.svg" alt="Cart"></img>
+   <img src="/pics/ticket.svg" alt="Cart" style={{ fill: svgColor }} />
           </Link>
     </Badge>
           
           <Link href="./checkout">
-            <img src="/pics/user.svg" alt="Profile"></img>
+          <img src="/pics/user.svg" alt="Profile" style={{ fill: svgColor }} />
           </Link>
         </div>
       </nav>

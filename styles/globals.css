@@ -84,7 +84,7 @@ a {
   color:var(--main-black);
 }
 a:hover{
-  opacity:0.7;
+  opacity:0.85;
   transition: ease-in 0.2s;
 }
 button{
