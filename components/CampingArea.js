@@ -3,14 +3,22 @@ import React from "react";
 
 export default function CampingArea(props) {
   function handleClick() {
-    const campingInfo = props.products.map((product) => {
-      if (product["type"] === "Camping") {
-        return { ...product, name: props.area, id: props.id };
-      }
-      return product;
-    });
+    if (props.products.some((product) => product["type"] === "Camping")) {
+      const campingInfo = props.products.map((product) => {
+        if (product.type === "Camping") {
+          return { ...product, name: props.area, id: props.id };
+        }
+        return product;
+      });
 
-    props.setProducts(campingInfo);
+      props.setProducts(campingInfo);
+
+      console.log(props.products);
+    } else {
+      props.setProducts((old) => old.concat(props.selectedCamping));
+
+      console.log(props.products);
+    }
   }
 
   return (
@@ -22,6 +30,7 @@ export default function CampingArea(props) {
       }}
       onClick={() => {
         props.setSelectedCamping({ name: props.area, type: "Camping", id: props.id });
+
         handleClick();
       }}
     >

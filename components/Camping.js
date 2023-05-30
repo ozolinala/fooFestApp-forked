@@ -10,8 +10,6 @@ export default function Camping(props) {
     id: undefined,
   });
 
-  console.log(props);
-
   const areas = [
     /* later fetch data */
 

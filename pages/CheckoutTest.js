@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { Button, message, Steps, theme } from "antd";
-import SelectCamping from "./components/SelectCamping.js";
+import SelectOptional from "./components/SelectOptional.js";
 import styles from "@/styles/Checkout.module.css";
 import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
@@ -48,8 +48,8 @@ function CheckoutTest() {
             justifyContent: "space-around",
           }}
         >
-          <SelectCamping />
-          <Booking />
+          <SelectOptional products={products} setProducts={setProducts} />
+          <Booking products={products} setProducts={setProducts} />
         </div>
       ),
     },
