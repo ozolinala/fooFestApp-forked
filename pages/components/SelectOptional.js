@@ -5,6 +5,28 @@ import Basket from "@/components/Basket";
 function SelectOptional(props) {
   const [selectedOptional, setSelectedOptional] = useState([]);
 
+  function handleClick(name, price) {
+    const option = {
+      name,
+      price,
+      type: "Optional",
+    };
+
+    if (props.products.some((product) => product["name"] === name)) {
+      props.setProducts((old) =>
+        old.filter((product) => {
+          return product["name"] !== name;
+        })
+      );
+    } else {
+      props.setProducts((old) => old.concat(option));
+    }
+
+    /*   props.setProducts((old) => old.concat(option)); */
+
+    console.log(props.products);
+  }
+
   return (
     <div className={styles.CampingTypeFlex}>
       <div
@@ -15,7 +37,7 @@ function SelectOptional(props) {
         }}
         onClick={() => {
           setSelectedOptional((old) => old.concat("green"));
-          console.log(selectedOptional);
+          handleClick("Green Camping", 249);
         }}
       >
         <p>01</p>
@@ -32,7 +54,7 @@ function SelectOptional(props) {
         }}
         onClick={() => {
           setSelectedOptional((old) => old.concat("setup"));
-          console.log(selectedOptional);
+          handleClick("Set-up Service", 299);
         }}
       >
         <p>02</p>
