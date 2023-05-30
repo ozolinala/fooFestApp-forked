@@ -27,18 +27,12 @@ export default function Home({ data }) {
         </div>
         <div className={styles.announcement}>
           <div>
-            <h2>THE BEATLES ARE COMING</h2>
             <p>
-              Officia eiusmod labore fugiat anim duis et anim consectetur enim
-              ex aute nisi aute sunt proident. Excepteur magna ea ea ut cillum
-              incididunt exercitation consequat. Dolor minim id ea ullamco
-              excepteur commodo ea labore deserunt aliquip voluptate anim aute
-              proident. Officia ut et enim Lorem veniam. Veniam sunt Lorem
-              labore Lorem aliqua velit aliquip voluptate cupidatat dolor
-              aliqua. Aute laborum esse aute ea amet.
+            “  We are 24 hours a day, 7 days a week, 365 days a year. ”
             </p>
+            <p className={styles.buyTickets}>Buy Tickets →</p>
           </div>
-          <div>{/* <img src={myImage} alt="My Image" /> */}</div>
+          <div><img src="pics/landing1.webp" alt="My Image" /></div>
         </div>
 
         <div className={styles.announcement}>

@@ -74,6 +74,32 @@
 .lineText{
   justify-content: center;
 }
+.coordinates{
+  color:white;
+  position: absolute;
+  font-size: 25px; 
+  left:1%;
+  top:4%;
+  writing-mode: vertical-rl;
+}
+.dates{
+  color:white;
+  position: absolute;
+  font-size: 35px; 
+  left:3%;
+  bottom:4%;
+}
+.buyTickets{
+  color:white;
+  position: absolute;
+  font-size: 35px; 
+  right:3%;
+  bottom:4%;
+}
+.buyTickets:hover{
+  color:var(--accent-color);
+  opacity: 1;
+}
 .heroTextContainer {
   display: flex;
   justify-content: center; /* Centers the content horizontally */
@@ -98,6 +124,11 @@
   display: inline;
 font-size: 30px;
 }
+.writtenBuy {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+font-size: 40px;
+}
 .writtenFoo {
   font-family: "FiveSerifLightItalic";
   font-size:300px;
@@ -115,6 +146,7 @@ font-size: 30px;
 }
 .landingLetters {
   margin-bottom: 15%;
+  margin-top: 8%;
 }
 .landingLetters h2 {
   text-justify: inter-character;
@@ -176,6 +208,15 @@ font-size: 30px;
     .writtenFoo h3{
       font-size: 18px;
     }
+    .coordinates{
+      font-size: 20px; 
+    }
+    .dates{
+      font-size: 25px; 
+    }
+    .buyTickets{
+      bottom:3%;
+    }
 }
 @media only screen and (max-width: 600px) {
   /* CSS styles for phones */
@@ -191,5 +232,18 @@ font-size: 30px;
   }
   .writtenFoo h3{
     font-size: 15px;
+  }
+  .coordinates{
+    font-size: 18px; 
+  }
+  .dates{
+    font-size: 20px; 
+  }
+  .buyTickets{
+    bottom:3%;
+    font-size: 30px;
+  }
+  .writtenBuy{
+    font-size: 35px;;
   }
 }
