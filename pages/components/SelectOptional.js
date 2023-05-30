@@ -28,6 +28,14 @@ function SelectOptional(props) {
     console.log(props.products);
   }
 
+  function handleSelected(selected) {
+    if (selectedOptional.includes(selected)) {
+      setSelectedOptional((old) => old.filter((item) => item !== selected));
+    } else {
+      setSelectedOptional((old) => old.concat(selected));
+    }
+  }
+
   return (
     <div className={styles.CampingTypeFlex}>
       <div
@@ -37,7 +45,7 @@ function SelectOptional(props) {
           border: selectedOptional.includes("green") ? "3px solid black" : "",
         }}
         onClick={() => {
-          setSelectedOptional((old) => old.concat("green"));
+          handleSelected("green");
           handleClick("Green Camping", 249, uuidv4());
         }}
       >
@@ -54,7 +62,7 @@ function SelectOptional(props) {
           border: selectedOptional.includes("setup") ? "3px solid black" : "",
         }}
         onClick={() => {
-          setSelectedOptional((old) => old.concat("setup"));
+          handleSelected("setup");
           handleClick("Set-up Service", 299, uuidv4());
         }}
       >
