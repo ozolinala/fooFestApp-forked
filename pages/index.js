@@ -1,10 +1,9 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import { HeroSection } from "./components/HeroSection";
-import { Newsletter } from "./components/Newsletter";
+import { HeroSection } from "@/components/HeroSection";
+import { Newsletter } from "@/components/Newsletter";
 
-
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -15,7 +14,17 @@ export default function Home({data}) {
       </Head>
       <main className={styles.Main}>
         <HeroSection />
-        <div className={styles.landingLetters}> <h2> <div className={styles.about}> (ABOUT) </div><div className={styles.written}>foo</div>fest ⸺ is the gateway to a mesmerizing journey where the Nordic summer ignites, the midnight sun dances, and the music takes center stage, enveloping you in an unforgettable celebration of sound and sensation.</h2> </div>
+        <div className={styles.landingLetters}>
+          {" "}
+          <h2>
+            {" "}
+            <div className={styles.about}> (ABOUT) </div>
+            <div className={styles.written}>foo</div>fest ⸺ is the gateway to a
+            mesmerizing journey where the Nordic summer ignites, the midnight
+            sun dances, and the music takes center stage, enveloping you in an
+            unforgettable celebration of sound and sensation.
+          </h2>{" "}
+        </div>
         <div className={styles.announcement}>
           <div>
             <h2>THE BEATLES ARE COMING</h2>
@@ -29,15 +38,11 @@ export default function Home({data}) {
               aliqua. Aute laborum esse aute ea amet.
             </p>
           </div>
-          <div>
-            {/* <img src={myImage} alt="My Image" /> */}
-          </div>
+          <div>{/* <img src={myImage} alt="My Image" /> */}</div>
         </div>
 
         <div className={styles.announcement}>
-          <div>
-            {/* <img src={myImage} alt="My Image" /> */}
-          </div>
+          <div>{/* <img src={myImage} alt="My Image" /> */}</div>
           <div>
             <h2>THE BEATLES ARE COMING</h2>
             <p>

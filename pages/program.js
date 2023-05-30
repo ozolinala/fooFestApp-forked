@@ -1,9 +1,9 @@
 import Head from "next/head";
 import styles from "@/styles/Program.module.css";
 import React, { useState } from "react";
-import { Newsletter } from "./components/Newsletter";
+import { Newsletter } from "@/components/Newsletter";
 import { Tabs } from "antd";
-import DaySchedule from "./components/DaySchedule";
+import DaySchedule from "@/components/DaySchedule";
 const { TabPane } = Tabs;
 
 function Program({ venues }) {

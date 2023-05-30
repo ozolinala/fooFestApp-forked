@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext, useEffect, useState } from 'react';
 import { StoreContext, DispatchContext } from '@/contexts/storeContext';
-import Cartitem from '/components/Cartitem';
+import Cartitem from '@/components/Cartitem';
 import Link from 'next/link';
 import styles from "@/styles/Basket.module.css";
 
