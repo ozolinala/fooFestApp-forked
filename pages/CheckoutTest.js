@@ -1,23 +1,49 @@
 import { React, useState } from "react";
 import { Button, message, Steps, theme } from "antd";
-import SelectCamping from "./SelectCamping.js";
+import SelectCamping from "./components/SelectCamping.js";
 import styles from "@/styles/Checkout.module.css";
+import Camping from "@/components/Camping.js";
+import Booking from "@/components/Booking.js";
 
 const steps = [
   {
-    title: "Select tickets",
+    title: "Selected Tickets",
     content: "First-content",
   },
   {
-    title: "Select camping",
-    content: "2",
+    title: "Select Camping",
+    content: (
+      <div
+        style={{
+          lineHeight: "1rem",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around",
+        }}
+      >
+        <Camping />
+        <Booking />
+      </div>
+    ),
   },
   {
-    title: "Select optional",
-    content: <SelectCamping />,
+    title: "Select Optional",
+    content: (
+      <div
+        style={{
+          lineHeight: "1rem",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around",
+        }}
+      >
+        <SelectCamping />
+        <Booking />
+      </div>
+    ),
   },
   {
-    title: "Booking information",
+    title: "Booking Information",
     content: "",
   },
   {
@@ -71,10 +97,7 @@ function CheckoutTest() {
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button
-            type="primary"
-            onClick={() => message.success("Processing complete!")}
-          >
+          <Button type="primary" onClick={() => message.success("Processing complete!")}>
             Done
           </Button>
         )}
