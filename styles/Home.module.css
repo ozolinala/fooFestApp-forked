@@ -70,6 +70,7 @@
 .written {
   font-family: "FiveSerifLightItalic";
   display: inline;
+  font-size: 105px;
 }
 .about {
   font-size: 17px;
@@ -80,6 +81,10 @@
 }
 .landingLetters h2 {
   text-justify: inter-character;
+}
+.customBadge .ant-badge-count {
+  background-color: yellow;
+  color: black;
 }
 .Footerbox {
   display: flex;

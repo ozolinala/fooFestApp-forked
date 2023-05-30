@@ -1,9 +1,16 @@
 // import Anchor from "./Anchor";
 import Link from "next/link";
-import Basket from "@/components/Basket";
+import { Badge } from 'antd';
 import styles from "@/styles/Home.module.css";
-import Basketicon from "@/components/Basketicon.js";
+import { useContext } from "react";
+import { StoreContext } from '@/contexts/storeContext';
 export default function Layout({ children }) {
+  const badgeStyle = {
+    backgroundColor: '#DFFE08',
+    color: 'black',
+  };
+  const { data } = useContext(StoreContext);
+  const itemCount = data.basket.reduce((total, item) => total + item.amount, 0);  // const CartIcon = ({ itemCount }) 
   return (
     <>
       <nav className={styles.Navbar}>
@@ -25,9 +32,12 @@ export default function Layout({ children }) {
           </li>
         </ul>
         <div className={styles.navIcons}>
-          <Link href="./basket">
+    <Badge count={itemCount} style={badgeStyle}>
+   <Link href="./basket">
             <img src="/pics/ticket.svg" alt="Cart"></img>
           </Link>
+    </Badge>
+          
           <Link href="./checkout">
             <img src="/pics/user.svg" alt="Profile"></img>
           </Link>
