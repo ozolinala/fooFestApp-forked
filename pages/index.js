@@ -25,31 +25,34 @@ export default function Home({ data }) {
             unforgettable celebration of sound and sensation.
           </h2>{" "}
         </div>
-        <div className={styles.announcement}>
-          <div>
-            <p>
-            “  We are 24 hours a day, 7 days a week, 365 days a year. ”
-            </p>
-            <p className={styles.buyTickets}>Buy Tickets →</p>
-          </div>
-          <div><img src="pics/landing1.webp" alt="My Image" /></div>
+        <div className={styles.flexContainer}>
+      <div className={styles.row}>
+        <div className={styles.box}>
+          <img src="pics/landing1.webp" alt="First Image" className={styles.image} />
         </div>
-
-        <div className={styles.announcement}>
-          <div>{/* <img src={myImage} alt="My Image" /> */}</div>
-          <div>
-            <h2>THE BEATLES ARE COMING</h2>
-            <p>
-              Officia eiusmod labore fugiat anim duis et anim consectetur enim
-              ex aute nisi aute sunt proident. Excepteur magna ea ea ut cillum
-              incididunt exercitation consequat. Dolor minim id ea ullamco
-              excepteur commodo ea labore deserunt aliquip voluptate anim aute
-              proident. Officia ut et enim Lorem veniam. Veniam sunt Lorem
-              labore Lorem aliqua velit aliquip voluptate cupidatat dolor
-              aliqua. Aute laborum esse aute ea amet.
-            </p>
-          </div>
+        <div className={styles.box}>
+        <div className={styles.textContainer}> <p className={styles.centeredText}>“We are <span className={styles.writtenBox}> 24 hours</span> a day, <span className={styles.writtenBox}>7 days</span> a week, <span className={styles.writtenBox}>365 days</span> a year. ”</p></div>
+          <p className={styles.buttonText}> <div className={styles.writtenBuyTickets}>Buy</div>Tickets →</p>
         </div>
+      </div>
+      <div className={styles.row}>
+        <div className={styles.box}>
+       <p className={styles.artistsText}> <span className={styles.writtenBuyTickets}>New</span>Artists →</p>
+          <p className={styles.artistsText2}>“ 시간 그 허망함 속에 이젠 그만 나오려 해요 ⸺ Time, amid that emptiness, I'm about to <span className={styles.written}> leave</span> now. ”</p>
+        </div>
+        <div className={styles.box}>
+          <img src="pics/landing2.webp" alt="Second Image" className={styles.image} />
+        </div>
+      </div>
+      <div className={styles.row}>
+        <div className={styles.box}>
+          <img src="pics/landing3.webp" alt="Second Image"  className={styles.image} />
+        </div>
+        <div className={styles.box}>
+        <div className={styles.textContainer}> <p className={styles.centeredText2}><span className={styles.writtenBuyTickets}>See</span>Program →</p><p className={styles.centeredText3}>More music and events will be added to the program.</p></div>
+        </div>
+      </div>
+    </div>
         <Newsletter />
       </main>
     </>

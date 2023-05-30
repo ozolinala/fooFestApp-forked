@@ -25,7 +25,7 @@
 }
 
 .Main {
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
@@ -36,12 +36,70 @@
   align-items: center;
 }
 
-
-.announcement {
+.flexContainer {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
+.row {
+  width: 100%;
+  display: flex;
+  height: 120vh; 
+}
+
+.box {
+  flex-basis: 50%;
+  position: relative; 
+}
+.buttonText{
+  font-size: 45px;
+  position: absolute;
+  bottom: 2%;
+  right: 3%;
+  display: inline;  
+}
+.artistsText{
+  font-size: 45px;
+  position: absolute;
+  top: 2%;
+  left: 3%; 
+}
+.artistsText2{
+  font-size: 25px;
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+  left: 5%; 
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.centeredText {
+  text-align: center;
+  font-size: 25px;
+}
+.centeredText2 {
+  text-align: center;
+  font-size: 45px;
+}
+.centeredText3 {
+  text-align: center;
+  font-size: 17px;
+}
 .Newsletter {
   display: flex;
   flex-direction: column;
@@ -129,12 +187,23 @@ font-size: 30px;
   display: inline;
 font-size: 40px;
 }
+.writtenBuyTickets {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+font-size: 50px;
+margin-right: 3%;
+}
 .writtenFoo {
   font-family: "FiveSerifLightItalic";
   font-size:300px;
   justify-content: center;
   display: inline;
   color: var(--accent-color);
+}
+.writtenBox {
+  font-family: "FiveSerifLightItalic";
+  font-size:35px;
+  display: inline;
 }
 .writtenFoo h3{
   font-family: "Studio6Regular";
@@ -147,6 +216,7 @@ font-size: 40px;
 .landingLetters {
   margin-bottom: 15%;
   margin-top: 8%;
+  margin-left: 3%;
 }
 .landingLetters h2 {
   text-justify: inter-character;
