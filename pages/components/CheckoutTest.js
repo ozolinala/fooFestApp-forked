@@ -18,7 +18,7 @@ const steps = [
   },
   {
     title: "Booking information",
-    content: <FormMapper />,
+    content: "",
   },
   {
     title: "Payment",

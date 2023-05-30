@@ -25,10 +25,6 @@
   margin-bottom: 1rem;
 }
 
-.CampingType:active {
-  background-color: #dffe00;
-}
-
 .CampingFlex {
   display: flex;
   width: 90%;
