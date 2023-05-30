@@ -1,5 +1,6 @@
-import Head from "next/head";
-import Ticket from "../components/Ticket";
+
+import Head from 'next/head'
+import Ticket from '@/components/Ticket';
 import styles from "@/styles/Lineup.module.css";
 import { useState, useEffect } from "react";
 

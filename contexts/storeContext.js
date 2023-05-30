@@ -50,8 +50,7 @@ const nextBasket = state.basket.map((item)=>{
         } else {
             const newItem = action.payload;
             newItem.amount = 1;
-            return {...state, basket: state.basket.concat(newItem)}  
-
+            return {...state, basket: state.basket.concat(newItem)}       
         }
     }
 }

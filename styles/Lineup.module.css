@@ -1,6 +1,9 @@
 .written {
   font-family: "FiveSerifLightItalic";
   display: inline;
+
+  font-size: 110px;
+
 }
 .wrapper {
   padding: 5vh;
@@ -14,6 +17,7 @@
   line-height: 2;
   display: flex;
   justify-content: flex-end;
+
   width: 100%;
 }
 
@@ -48,4 +52,7 @@
   .artistLineup > div {
     flex-basis: 100%;
   }
+}
+.rightAligned {
+  max-width: 45%;
 }
