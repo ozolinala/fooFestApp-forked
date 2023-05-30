@@ -5,58 +5,70 @@ import styles from "@/styles/Checkout.module.css";
 import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
 
-const steps = [
-  {
-    title: "Selected Tickets",
-    content: "First-content",
-  },
-  {
-    title: "Select Camping",
-    content: (
-      <div
-        style={{
-          lineHeight: "1rem",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around",
-        }}
-      >
-        <Camping />
-        <Booking />
-      </div>
-    ),
-  },
-  {
-    title: "Select Optional",
-    content: (
-      <div
-        style={{
-          lineHeight: "1rem",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around",
-        }}
-      >
-        <SelectCamping />
-        <Booking />
-      </div>
-    ),
-  },
-  {
-    title: "Booking Information",
-    content: "",
-  },
-  {
-    title: "Payment",
-    content: "Last-content",
-  },
-  {
-    title: "Done",
-    content: "Last-content",
-  },
-];
-
 function CheckoutTest() {
+  /* data */
+
+  const [products, setProducts] = useState([]);
+
+  const data = {
+    products,
+  };
+
+  /* antd pages */
+
+  const steps = [
+    {
+      title: "Selected Tickets",
+      content: "First-content",
+    },
+    {
+      title: "Select Camping",
+      content: (
+        <div
+          style={{
+            lineHeight: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <Camping products={products} setProducts={setProducts} />
+          <Booking products={products} setProducts={setProducts} />
+        </div>
+      ),
+    },
+    {
+      title: "Select Optional",
+      content: (
+        <div
+          style={{
+            lineHeight: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <SelectCamping />
+          <Booking />
+        </div>
+      ),
+    },
+    {
+      title: "Booking Information",
+      content: "",
+    },
+    {
+      title: "Payment",
+      content: "Last-content",
+    },
+    {
+      title: "Done",
+      content: "Last-content",
+    },
+  ];
+
+  /*  */
+
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
   const next = () => {

@@ -3,8 +3,14 @@ import React from "react";
 import CampingArea from "@/components/CampingArea";
 import { useState } from "react";
 
-export default function Camping() {
-  const [selectedCamping, setSelectedCamping] = useState(null);
+export default function Camping(props) {
+  const [selectedCamping, setSelectedCamping] = useState({
+    name: undefined,
+    type: "Camping",
+    id: undefined,
+  });
+
+  console.log(props);
 
   const areas = [
     /* later fetch data */
@@ -47,6 +53,8 @@ export default function Camping() {
             available={area.available}
             selectedCamping={selectedCamping}
             setSelectedCamping={setSelectedCamping}
+            products={props.products}
+            setProducts={props.setProducts}
           />
         );
       })}
