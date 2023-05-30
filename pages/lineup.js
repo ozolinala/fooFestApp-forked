@@ -1,6 +1,5 @@
-
-import Head from 'next/head'
-import Ticket from '@/components/Ticket';
+import Head from "next/head";
+import Ticket from "@/components/Ticket";
 import styles from "@/styles/Lineup.module.css";
 import { useState, useEffect } from "react";
 
@@ -38,33 +37,17 @@ export default function LineUp() {
       </div>
       <div className={styles.gridImages}>
         <img src="pics/artist1.webp" alt={`artist1`} />
-        <p className={styles.hidden}>&nbsp;</p>
-        <img
-          className={styles.hidden}
-          src="pics/artist2.webp"
-          alt={`artist2`}
-        />
-        <p className={styles.hidden}>&nbsp;</p>
-        <img
-          className={styles.hidden}
-          src="pics/artist3.webp"
-          alt={`artist3`}
-        />
-        <p className={styles.hidden}>&nbsp;</p>
-        <p className={styles.hidden}>&nbsp;</p>
+        <div className={styles.hidden}>&nbsp;</div>
+        <img src="pics/artist2.webp" alt={`artist2`} />
+        <div className={styles.grey}>&nbsp;</div>
+        <img src="pics/artist3.webp" alt={`artist3`} />
+        <div className={styles.blue}>&nbsp;</div>
+        <div className={styles.hidden}>&nbsp;</div>
         <img src="pics/artist4.webp" alt={`artist4`} />
-        <p className={styles.hidden}>&nbsp;</p>
-        <img
-          className={styles.hidden}
-          src="pics/artist5.webp"
-          alt={`artist5`}
-        />
-        <p className={styles.hidden}>&nbsp;</p>
-        <img
-          className={styles.hidden}
-          src="pics/artist6.webp"
-          alt={`artist6`}
-        />
+        <div className={styles.yellow}>&nbsp;</div>
+        <img src="pics/artist5.webp" alt={`artist5`} />
+        <div className={styles.hidden}>&nbsp;</div>
+        <img src="pics/artist6.webp" alt={`artist6`} />
       </div>
       <div className={styles.wrapper}>
         <h1 className={styles.lineup}>LINE-UP</h1>
@@ -72,9 +55,9 @@ export default function LineUp() {
         <div className={styles.artistLineup}>
           <div className={styles.hidden}> &nbsp; </div>
           <div>
-            {data.map((item) => (
+            {data.slice(0, 40).map((item) => (
               <h4 className={styles.rightAligned} key={item.id}>
-                {item.name} / &nbsp;
+                {item.name} /&nbsp;
               </h4>
             ))}
           </div>
