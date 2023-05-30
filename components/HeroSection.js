@@ -4,12 +4,19 @@ import styles from "@/styles/Home.module.css";
 export const HeroSection = () => {
   return (
     <div className={styles.HeroSection}>
-      <div className={styles.heroText}>
-        <h1>FOOFEST</h1>
+      <img className={styles.heroImage} src="pics/home.webp" alt={`artist1`} />
+
+      <div className={styles.heroTextContainer}>
+        <div className={styles.heroText}>
+          <div className={styles.writtenFoo}>
+            <div className={styles.lineText}>
+              <h3>THE <div className={styles.writtenNew}>new </div>MUSIC FESTIVAL</h3>
+            </div>
+            <h1 className={styles.writtenFoo}>‘foo’</h1>
+          </div>
+        </div>
       </div>
-      <div className={styles.heroGraphics}></div>
     </div>
   );
-
 };
 

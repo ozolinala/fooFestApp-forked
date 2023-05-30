@@ -18,8 +18,8 @@ export default function Home({ data }) {
           {" "}
           <h2>
             {" "}
-            <div className={styles.about}> (ABOUT) </div>
-            <div className={styles.written}>foo</div>fest ⸺ is the gateway to a
+           
+           <sup className={styles.about}>(ABOUT) </sup> <div className={styles.written}>foo</div>fest ⸺ is the gateway to a
             mesmerizing journey where the Nordic summer ignites, the midnight
             sun dances, and the music takes center stage, enveloping you in an
             unforgettable celebration of sound and sensation.

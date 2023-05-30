@@ -35,7 +35,22 @@
 .Main {
   padding: 5vh;
 }
-
+.programImage{
+  position: absolute;
+  z-index: -100;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 97%;
+  left:0;
+  top:0;
+}
+.ProgramSection {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media (max-width: 768px) {
   .verticalSchedule {
     display: flex;

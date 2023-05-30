@@ -3,6 +3,7 @@ import styles from "@/styles/Program.module.css";
 import React, { useState } from "react";
 import { Newsletter } from "@/components/Newsletter";
 import { Tabs } from "antd";
+import { ProgramSection } from "@/components/ProgramSection";
 import DaySchedule from "@/components/DaySchedule";
 const { TabPane } = Tabs;
 
@@ -13,6 +14,7 @@ function Program({ venues }) {
     setActiveTab(key);
   };
 
+
   return (
     <>
       <Head>
@@ -22,6 +24,7 @@ function Program({ venues }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.Main}>
+        <ProgramSection/>
         <h1>
           <span className={styles.written}>Festival's</span> Program
         </h1>
