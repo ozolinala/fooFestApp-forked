@@ -1,7 +1,9 @@
 .written {
   font-family: "FiveSerifLightItalic";
   display: inline;
+
   font-size: 110px;
+
 }
 .wrapper {
   padding: 5vh;
@@ -15,6 +17,41 @@
   line-height: 2;
   display: flex;
   justify-content: flex-end;
+
+  width: 100%;
+}
+
+.artistLineup > div {
+  flex-basis: 50%;
+}
+.rightAligned {
+  display: inline;
+}
+
+.gridImages {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.gridImages img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .gridImages {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .artistLineup > div {
+    flex-basis: 100%;
+  }
 }
 .rightAligned {
   max-width: 45%;
