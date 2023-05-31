@@ -42,7 +42,9 @@ function SelectOptional(props) {
         className={styles.CampingType}
         style={{
           backgroundColor: selectedOptional.includes("green") ? "#E3FFB7" : "",
-          border: selectedOptional.includes("green") ? "3px solid black" : "",
+          outline: selectedOptional.includes("green")
+            ? "2px solid #1E1E1E"
+            : "",
         }}
         onClick={() => {
           handleSelected("green");
@@ -52,14 +54,19 @@ function SelectOptional(props) {
         <p>01</p>
         <img src="pics/green.svg" alt={`artist1`} />
         <h3>Green camping</h3>
-        <p>The tents are made from recycled materials and FooFest loves sustainability.</p>
+        <p>
+          The tents are made from recycled materials and FooFest loves
+          sustainability.
+        </p>
         <span className={styles.Price}>DKK 249,-</span>
       </div>
       <div
         className={styles.CampingType}
         style={{
           backgroundColor: selectedOptional.includes("setup") ? "#E3FFB7" : "",
-          border: selectedOptional.includes("setup") ? "3px solid black" : "",
+          outline: selectedOptional.includes("setup")
+            ? "2px solid #1E1E1E"
+            : "",
         }}
         onClick={() => {
           handleSelected("setup");
@@ -69,7 +76,10 @@ function SelectOptional(props) {
         <p>02</p>
         <img src="pics/tent.svg" alt={`artist1`} />
         <h3>Tent Set-up Service</h3>
-        <p>The crew will set up tents for you. The tents are included in the price.</p>
+        <p>
+          The crew will set up tents for you. The tents are included in the
+          price.
+        </p>
         <span className={styles.Price}>DKK 299,-</span>
       </div>
     </div>
