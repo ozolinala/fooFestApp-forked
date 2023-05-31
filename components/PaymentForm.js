@@ -23,25 +23,39 @@ export default function PaymentInputs() {
   };
 
   return (
-    <div className={styles.paymentFormFlex}>
-      <label>
-        Card number
-        <input
-          {...getCardNumberProps({ onChange: handleChangeCardNumber })}
-          value={cardNumber}
-        />
-      </label>
-      <label>
-        Expiry date
-        <input
-          {...getExpiryDateProps({ onChange: handleChangeExpiryDate })}
-          value={expiryDate}
-        />
-      </label>
-      <label>
-        CVC
-        <input {...getCVCProps({ onChange: handleChangeCVC })} value={cvc} />
-      </label>
-    </div>
+    <>
+      <div className={styles.paymentFormFlex}>
+        <div>
+          <label>
+            Card holder name
+            <input type="text" placeholder="Your name" />
+          </label>
+          <label>
+            Card number
+            <input
+              {...getCardNumberProps({ onChange: handleChangeCardNumber })}
+              value={cardNumber}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Expiry date
+            <input
+              {...getExpiryDateProps({ onChange: handleChangeExpiryDate })}
+              value={expiryDate}
+            />
+          </label>
+          <label>
+            CVC
+            <input
+              {...getCVCProps({ onChange: handleChangeCVC })}
+              value={cvc}
+            />
+          </label>
+        </div>
+      </div>
+      <button>Validate</button>
+    </>
   );
 }
