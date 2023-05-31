@@ -1,7 +1,7 @@
 import styles from "@/styles/Camping.module.css";
 import React from "react";
 import CampingArea from "@/components/CampingArea";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Camping(props) {
@@ -11,35 +11,22 @@ export default function Camping(props) {
     id: "",
   });
 
-  const areas = [
-    /* later fetch data */
+  const [campingData, setCampingData] = useState([]);
 
-    {
-      area: "Nilfheim",
-      available: 1,
-      id: uuidv4(),
-    },
-    {
-      area: "Svartheim",
-      available: 2,
-      id: uuidv4(),
-    },
-    {
-      area: "Helheim",
-      available: 3,
-      id: uuidv4(),
-    },
-    {
-      area: "Muspelheim",
-      available: 4,
-      id: uuidv4(),
-    },
-    {
-      area: "Alfheim",
-      available: 5,
-      id: uuidv4(),
-    },
-  ];
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("https://tan-chipped-baboon.glitch.me/available-spots");
+      const json = await response.json();
+      setCampingData(json);
+    }
+    fetchData();
+  }, []);
+
+  const areas = campingData.map((data) => {
+    return { ...data, id: uuidv4() };
+  });
+
+  console.log(areas);
 
   return (
     <div className={styles.Camping}>
@@ -49,6 +36,7 @@ export default function Camping(props) {
             key={area.id}
             id={area.id}
             area={area.area}
+            spots={area.spots}
             available={area.available}
             selectedCamping={selectedCamping}
             setSelectedCamping={setSelectedCamping}

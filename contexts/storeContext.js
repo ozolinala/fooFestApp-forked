@@ -60,9 +60,7 @@ export const StoreProvider = ({ children }) => {
 
   return (
     <StoreContext.Provider value={{ data }}>
-      <DispatchContext.Provider value={dispatch}>
-        {children}
-      </DispatchContext.Provider>
+      <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </StoreContext.Provider>
   );
 };

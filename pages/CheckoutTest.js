@@ -6,15 +6,14 @@ import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
 import { v4 as uuidv4 } from "uuid";
 import SelectedTickets from "@/components/SelectedTickets.js";
-import { StoreContext, DispatchContext } from "@/contexts/storeContext";
+import { StoreContext } from "@/contexts/storeContext";
 
 function CheckoutTest() {
   /* data */
 
   const [products, setProducts] = useState([]);
 
-  /* total ticket price */
-
+  /* total ticket amount, price */
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const { data } = useContext(StoreContext);
@@ -32,8 +31,7 @@ function CheckoutTest() {
     setTotalPrice(price);
   }, [data.basket]);
 
-  /* antd pages */
-
+  /* antd step pages */
   const steps = [
     {
       title: "Selected Tickets",
@@ -99,7 +97,7 @@ function CheckoutTest() {
     },
   ];
 
-  /*  */
+  /* antd settings */
 
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
@@ -141,10 +139,7 @@ function CheckoutTest() {
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button
-            type="primary"
-            onClick={() => message.success("Processing complete!")}
-          >
+          <Button type="primary" onClick={() => message.success("Processing complete!")}>
             Done
           </Button>
         )}
