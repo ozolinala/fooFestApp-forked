@@ -3,7 +3,7 @@ import { StoreContext } from "@/contexts/storeContext";
 import { useContext, useEffect, useState } from "react";
 import styles from "@/styles/Basket.module.css";
 
-export default function Checkout() {
+export default function BookingInfo() {
   const state = useContext(StoreContext);
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -116,15 +116,6 @@ export default function Checkout() {
             </li>
           ))}
         </ul>
-        <div className={styles.total}>
-          <p>
-            <strong>Total amount of tickets:</strong> {totalAmount}
-          </p>
-          <p>
-            <strong>Total price:</strong> DKK {totalPrice},-
-          </p>
-        </div>
-        <button onClick={handleSubmit}>Buy now</button>
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import PaymentForm from "@/components/PaymentForm.js";
 import { v4 as uuidv4 } from "uuid";
 import SelectedTickets from "@/components/SelectedTickets.js";
 import { StoreContext } from "@/contexts/storeContext";
+import BookingInfo from "@/components/BookingInfo.js";
 
 function CheckoutTest() {
   /* data */
@@ -86,7 +87,20 @@ function CheckoutTest() {
     },
     {
       title: "Booking Information",
-      content: "",
+      content: (
+        <div
+          style={{
+            lineHeight: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            padding: "2rem",
+          }}
+        >
+          <BookingInfo products={products} setProducts={setProducts} />
+          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
+        </div>
+      ),
     },
     {
       title: "Payment",
@@ -104,10 +118,6 @@ function CheckoutTest() {
           <Booking products={products} setProducts={setProducts} />
         </div>
       ),
-    },
-    {
-      title: "Done",
-      content: "Last-content",
     },
   ];
 
@@ -153,7 +163,7 @@ function CheckoutTest() {
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success("Processing complete!")}>
+          <Button type="primary" onClick={() => message.success("Booking complete!")}>
             Done
           </Button>
         )}
