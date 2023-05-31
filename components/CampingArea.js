@@ -21,11 +21,17 @@ export default function CampingArea(props) {
     <div
       className={styles.CampingArea}
       style={{
-        backgroundColor: props.selectedCamping.name === props.area ? "#E3FFB7" : "",
-        border: props.selectedCamping.name === props.area ? "3px solid black" : "",
+        backgroundColor:
+          props.selectedCamping.name === props.area ? "#E3FFB7" : "",
+        outline:
+          props.selectedCamping.name === props.area ? "2px solid #1E1E1E" : "",
       }}
       onClick={() => {
-        props.setSelectedCamping({ name: props.area, type: "Camping", id: props.id });
+        props.setSelectedCamping({
+          name: props.area,
+          type: "Camping",
+          id: props.id,
+        });
 
         handleClick();
       }}

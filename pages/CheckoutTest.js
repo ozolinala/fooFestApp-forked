@@ -31,6 +31,7 @@ function CheckoutTest() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
+            padding: "2rem",
           }}
         >
           <Camping products={products} setProducts={setProducts} />
@@ -47,6 +48,7 @@ function CheckoutTest() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
+            padding: "2rem",
           }}
         >
           <SelectOptional products={products} setProducts={setProducts} />
@@ -110,7 +112,10 @@ function CheckoutTest() {
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success("Processing complete!")}>
+          <Button
+            type="primary"
+            onClick={() => message.success("Processing complete!")}
+          >
             Done
           </Button>
         )}
