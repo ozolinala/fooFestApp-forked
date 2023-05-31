@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useContext, useEffect } from "react";
 import { Button, message, Steps, theme } from "antd";
 import SelectOptional from "./components/SelectOptional.js";
 import styles from "@/styles/Checkout.module.css";
@@ -6,22 +6,51 @@ import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
 import PaymentForm from "@/components/PaymentForm.js";
 import { v4 as uuidv4 } from "uuid";
+import SelectedTickets from "@/components/SelectedTickets.js";
+import { StoreContext, DispatchContext } from "@/contexts/storeContext";
 
 function CheckoutTest() {
   /* data */
 
   const [products, setProducts] = useState([]);
 
-  const data = {
-    products,
-  };
+  /* total ticket price */
+
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const { data } = useContext(StoreContext);
+
+  useEffect(() => {
+    let amount = 0;
+    let price = 0;
+
+    data.basket.forEach((item) => {
+      amount += item.amount;
+      price += item.price * item.amount;
+    });
+
+    setTotalAmount(amount);
+    setTotalPrice(price);
+  }, [data.basket]);
 
   /* antd pages */
 
   const steps = [
     {
       title: "Selected Tickets",
-      content: "First-content",
+      content: (
+        <div
+          style={{
+            lineHeight: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <SelectedTickets products={products} setProducts={setProducts}></SelectedTickets>
+          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
+        </div>
+      ),
     },
     {
       title: "Select Camping",
@@ -36,7 +65,7 @@ function CheckoutTest() {
           }}
         >
           <Camping products={products} setProducts={setProducts} />
-          <Booking products={products} setProducts={setProducts} />
+          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
         </div>
       ),
     },
@@ -53,7 +82,7 @@ function CheckoutTest() {
           }}
         >
           <SelectOptional products={products} setProducts={setProducts} />
-          <Booking products={products} setProducts={setProducts} />
+          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
         </div>
       ),
     },

@@ -12,12 +12,12 @@ export default function Booking(props) {
     { type: "Green Camping", price: 249, id: 4 },
   ]; */
 
-  const [total, setTotal] = useState(99);
+  const [total, setTotal] = useState(99 + props.totalPrice);
 
   const items = [...props.products, { name: "Booking Fee", type: "Fee", price: 99, id: uuidv4() }];
 
   useEffect(() => {
-    setTotal(99);
+    setTotal(99 + props.totalPrice);
     props.products.forEach((product) => {
       if (product.price) {
         setTotal((old) => (old += product.price));

@@ -6,9 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function Camping(props) {
   const [selectedCamping, setSelectedCamping] = useState({
-    name: undefined,
+    name: "",
     type: "Camping",
-    id: undefined,
+    id: "",
   });
 
   const areas = [

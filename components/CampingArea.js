@@ -15,6 +15,8 @@ export default function CampingArea(props) {
     } else {
       props.setProducts((old) => old.concat(props.selectedCamping));
     }
+
+    console.log(props.products);
   }
 
   return (

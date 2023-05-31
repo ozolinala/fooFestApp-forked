@@ -28,7 +28,7 @@ export default function Layout({ children }) {
           <Link href="./basket">
             <img src="/pics/ticket.svg" alt="Cart"></img>
           </Link>
-          <Link href="./checkout">
+          <Link href="./CheckoutTest">
             <img src="/pics/user.svg" alt="Profile"></img>
           </Link>
         </div>
@@ -37,11 +37,7 @@ export default function Layout({ children }) {
       <div className={styles.Footer}>
         <div className={styles.Footerbox}>
           <div className={styles.leftFooter}>
-            <img
-              className={styles.longLogo}
-              src="/pics/longLogo.svg"
-              alt="Logo"
-            ></img>
+            <img className={styles.longLogo} src="/pics/longLogo.svg" alt="Logo"></img>
             <p>Svinoy bygd, Faroe Islands</p>
             <a href="tel: +45 85 85 85 85">+45 85 85 85 85</a> <br></br>
             <a href="mailto: abc@example.com">info@foofest.dk</a>
@@ -77,9 +73,7 @@ export default function Layout({ children }) {
             </ul>
           </div>
         </div>
-        <p className={styles.copyright}>
-          © This is a student project website. 2023
-        </p>
+        <p className={styles.copyright}>© This is a student project website. 2023</p>
       </div>
     </>
   );
