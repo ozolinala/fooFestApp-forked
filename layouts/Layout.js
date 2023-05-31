@@ -1,55 +1,78 @@
-
 import Link from "next/link";
-import { Badge } from 'antd';
+import { Badge } from "antd";
 import styles from "@/styles/Home.module.css";
 import { useContext } from "react";
 import { useRouter } from "next/router";
-import { StoreContext } from '@/contexts/storeContext';
-
-
+import { StoreContext } from "@/contexts/storeContext";
+import AppNavbar from "@/components/AppNavbar";
 
 export default function Layout({ children }) {
   const badgeStyle = {
-    backgroundColor: '#DFFE08',
-    color: 'black',
+    backgroundColor: "#DFFE08",
+    color: "black",
   };
   const { data } = useContext(StoreContext);
-  const itemCount = data.basket.reduce((total, item) => total + item.amount, 0);  // const CartIcon = ({ itemCount }) 
+  const itemCount = data.basket.reduce((total, item) => total + item.amount, 0); // const CartIcon = ({ itemCount })
   const router = useRouter();
   const isHomePage = router.pathname === "/";
   const logoVisibility = isHomePage ? "hidden" : "visible";
   const textColor = isHomePage ? "white" : "var(--main-black)";
   const svgColor = isHomePage ? "white" : "var(--main-black)";
-  
+
   return (
     <>
-      <nav className={styles.Navbar}>
+      <nav className={`${styles.Navbar} ${styles.mobileHidden}`}>
         <Link href="./">
-          <img className={styles.Logo} src="/pics/fooLogo.svg" alt="Logo" style={{ visibility: logoVisibility }}></img>
+          <img
+            className={styles.Logo}
+            src="/pics/fooLogo.svg"
+            alt="Logo"
+            style={{ visibility: logoVisibility }}
+          ></img>
         </Link>
         <ul className={styles.navLinks}>
           <li>
-            <Link href="./about"> <a style={{ color: textColor }}>ABOUT</a></Link>
+            <Link href="./about">
+              {" "}
+              <a style={{ color: textColor }}>ABOUT</a>
+            </Link>
           </li>
           <li>
-            <Link href="./lineup"> <a style={{ color: textColor }}>LINE-UP</a></Link>
+            <Link href="./lineup">
+              {" "}
+              <a style={{ color: textColor }}>LINE-UP</a>
+            </Link>
           </li>
           <li>
-            <Link href="./program"> <a style={{ color: textColor }}>PROGRAM</a></Link>
+            <Link href="./program">
+              {" "}
+              <a style={{ color: textColor }}>PROGRAM</a>
+            </Link>
           </li>
           <li>
-            <Link href="./tickets"> <a style={{ color: textColor }}>TICKETS</a></Link>
+            <Link href="./tickets">
+              {" "}
+              <a style={{ color: textColor }}>TICKETS</a>
+            </Link>
           </li>
         </ul>
         <div className={styles.navIcons}>
-    <Badge count={itemCount} style={badgeStyle}>
-   <Link href="./basket">
-   <img src="/pics/ticket.svg" alt="Cart" style={{ fill: svgColor }} />
-          </Link>
-    </Badge>
-          
+          <Badge count={itemCount} style={badgeStyle}>
+            <Link href="./basket">
+              <img
+                src="/pics/ticket.svg"
+                alt="Cart"
+                style={{ fill: svgColor }}
+              />
+            </Link>
+          </Badge>
+
           <Link href="./checkout">
-          <img src="/pics/user.svg" alt="Profile" style={{ fill: svgColor }} />
+            <img
+              src="/pics/user.svg"
+              alt="Profile"
+              style={{ fill: svgColor }}
+            />
           </Link>
         </div>
       </nav>
@@ -101,6 +124,7 @@ export default function Layout({ children }) {
           © This is a student project website. 2023
         </p>
       </div>
+      <AppNavbar />
     </>
   );
 }

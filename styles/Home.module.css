@@ -19,6 +19,27 @@
   gap: 0.8rem;
 }
 
+.mobile {
+  display: none;
+}
+
+.AppNavLinks {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+}
+
+.AppNavLinks li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .Header {
   width: 90%;
   margin: auto;
@@ -44,32 +65,32 @@
 .row {
   width: 100%;
   display: flex;
-  height: 120vh; 
+  height: 120vh;
 }
 
 .box {
   flex-basis: 50%;
-  position: relative; 
+  position: relative;
 }
-.buttonText{
+.buttonText {
   font-size: 45px;
   position: absolute;
   bottom: 2%;
   right: 3%;
-  display: inline;  
+  display: inline;
 }
-.artistsText{
+.artistsText {
   font-size: 45px;
   position: absolute;
   top: 2%;
-  left: 3%; 
+  left: 3%;
 }
-.artistsText2{
+.artistsText2 {
   font-size: 25px;
   position: absolute;
   bottom: 10%;
   width: 90%;
-  left: 5%; 
+  left: 5%;
 }
 .image {
   width: 100%;
@@ -127,36 +148,36 @@
 .announcement > div {
   flex-basis: 50%;
 }
-.lineText h3{
+.lineText h3 {
   margin-bottom: 0;
 }
-.lineText{
+.lineText {
   justify-content: center;
 }
-.coordinates{
-  color:white;
+.coordinates {
+  color: white;
   position: absolute;
-  font-size: 25px; 
-  left:1%;
-  top:4%;
+  font-size: 25px;
+  left: 1%;
+  top: 4%;
   writing-mode: vertical-rl;
 }
-.dates{
-  color:white;
+.dates {
+  color: white;
   position: absolute;
-  font-size: 35px; 
-  left:3%;
-  bottom:4%;
+  font-size: 35px;
+  left: 3%;
+  bottom: 4%;
 }
-.buyTickets{
-  color:white;
+.buyTickets {
+  color: white;
   position: absolute;
-  font-size: 35px; 
-  right:3%;
-  bottom:4%;
+  font-size: 35px;
+  right: 3%;
+  bottom: 4%;
 }
-.buyTickets:hover{
-  color:var(--accent-color);
+.buyTickets:hover {
+  color: var(--accent-color);
   opacity: 1;
 }
 .heroTextContainer {
@@ -181,32 +202,32 @@
 .writtenNew {
   font-family: "FiveSerifLightItalic";
   display: inline;
-font-size: 30px;
+  font-size: 30px;
 }
 .writtenBuy {
   font-family: "FiveSerifLightItalic";
   display: inline;
-font-size: 40px;
+  font-size: 40px;
 }
 .writtenBuyTickets {
   font-family: "FiveSerifLightItalic";
   display: inline;
-font-size: 50px;
-margin-right: 3%;
+  font-size: 50px;
+  margin-right: 3%;
 }
 .writtenFoo {
   font-family: "FiveSerifLightItalic";
-  font-size:300px;
+  font-size: 300px;
   justify-content: center;
   display: inline;
   color: var(--accent-color);
 }
 .writtenBox {
   font-family: "FiveSerifLightItalic";
-  font-size:35px;
+  font-size: 35px;
   display: inline;
 }
-.writtenFoo h3{
+.writtenFoo h3 {
   font-family: "Studio6Regular";
   font-size: 20px;
 }
@@ -254,15 +275,15 @@ margin-right: 3%;
   color: white;
   line-height: 2rem;
 }
-.heroImage{
+.heroImage {
   position: absolute;
   z-index: -100;
   width: 100%;
   object-fit: cover;
   overflow: hidden;
   height: 97%;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
@@ -272,22 +293,22 @@ margin-right: 3%;
   }
   .writtenNew {
     font-size: 25px;
-    }
-    .writtenFoo {
-      font-size:240px;
-    }
-    .writtenFoo h3{
-      font-size: 18px;
-    }
-    .coordinates{
-      font-size: 20px; 
-    }
-    .dates{
-      font-size: 25px; 
-    }
-    .buyTickets{
-      bottom:3%;
-    }
+  }
+  .writtenFoo {
+    font-size: 240px;
+  }
+  .writtenFoo h3 {
+    font-size: 18px;
+  }
+  .coordinates {
+    font-size: 20px;
+  }
+  .dates {
+    font-size: 25px;
+  }
+  .buyTickets {
+    bottom: 3%;
+  }
 }
 @media only screen and (max-width: 600px) {
   /* CSS styles for phones */
@@ -296,25 +317,33 @@ margin-right: 3%;
     margin-bottom: 6vh;
   }
   .writtenNew {
-  font-size: 20px;
+    font-size: 20px;
   }
   .writtenFoo {
-    font-size:170px;
+    font-size: 170px;
   }
-  .writtenFoo h3{
+  .writtenFoo h3 {
     font-size: 15px;
   }
-  .coordinates{
-    font-size: 18px; 
+  .coordinates {
+    font-size: 18px;
   }
-  .dates{
-    font-size: 20px; 
+  .dates {
+    font-size: 20px;
   }
-  .buyTickets{
-    bottom:3%;
+  .buyTickets {
+    bottom: 3%;
     font-size: 30px;
   }
-  .writtenBuy{
-    font-size: 35px;;
+  .writtenBuy {
+    font-size: 35px;
+  }
+
+  .mobile {
+    display: inline;
+  }
+
+  .mobileHidden {
+    display: none;
   }
 }
