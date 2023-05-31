@@ -4,6 +4,7 @@ import SelectOptional from "./components/SelectOptional.js";
 import styles from "@/styles/Checkout.module.css";
 import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
+import PaymentForm from "@/components/PaymentForm.js";
 import { v4 as uuidv4 } from "uuid";
 import SelectedTickets from "@/components/SelectedTickets.js";
 import { StoreContext } from "@/contexts/storeContext";
@@ -89,7 +90,20 @@ function CheckoutTest() {
     },
     {
       title: "Payment",
-      content: "Last-content",
+      content: (
+        <div
+          style={{
+            lineHeight: "1rem",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            padding: "2rem",
+          }}
+        >
+          <PaymentForm />
+          <Booking products={products} setProducts={setProducts} />
+        </div>
+      ),
     },
     {
       title: "Done",
