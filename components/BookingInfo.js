@@ -22,23 +22,9 @@ export default function BookingInfo() {
     setTotalPrice(price);
   }, [data.basket]);
 
-  const handleInputChange = (event, item) => {
-    // Update the item details in the context
-    const updatedBasket = data.basket.map((basketItem) => {
-      if (basketItem.id === item.id) {
-        return {
-          ...basketItem,
-          [event.target.name]: event.target.value,
-        };
-      }
-      return basketItem;
-    });
-    state.updateBasket(updatedBasket);
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent form submission
-
+    alert("form submitted");
     // Perform any additional logic or actions here
     console.log("Form submitted!");
   };
@@ -53,52 +39,55 @@ export default function BookingInfo() {
       </Head>
 
       <div className={styles.wrapper}>
-        <h1>Checkout</h1>
+        <h1 style={{ fontSize: "2.25rem" }}>Booking Information</h1>
         <ul>
           {state.data.basket.map((item) => (
             <li className={styles.ticketFormList} key={item.id}>
-              {item.name} X {item.amount}
+              {item.name} × {item.amount}
               {[...Array(item.amount)].map((_, index) => (
                 <form
+                  onChange={() => {
+                    console.log(item.name);
+                  }}
                   onSubmit={handleSubmit}
                   className={styles.userInfoForm}
                   key={`${item.id}-${index}`}
                 >
-                  <p>Ticket {index + 1}</p>
+                  <p>
+                    {item.name} {index + 1}
+                  </p>
                   <div className={styles.formContainer}>
                     <div>
                       <div className={styles.labelAndInput}>
-                        <label>Name</label>
+                        <label>First Name</label>
                         <input
                           type="text"
                           name={`name-${item.id}-${index}`}
-                          placeholder="Write here.."
+                          placeholder="John"
                           required
-                          onChange={(e) => handleInputChange(e, item)}
                         />
                       </div>
-                      <div className={styles.labelAndInput}>
-                        <label>Last name</label>
-                        <input
-                          type="text"
-                          name={`name-${item.id}-${index}`}
-                          placeholder="Write here.."
-                          required
-                          onChange={(e) => handleInputChange(e, item)}
-                        />
-                      </div>
-                    </div>
-                    <div>
                       <div className={styles.labelAndInput}>
                         <label>E-mail</label>
                         <input
                           type="email"
                           name={`email-${item.id}-${index}`}
-                          placeholder="Write here.."
+                          placeholder="example@foofest.com"
                           required
-                          onChange={(e) => handleInputChange(e, item)}
                         />
                       </div>
+                    </div>
+                    <div>
+                      <div className={styles.labelAndInput}>
+                        <label>Last name</label>
+                        <input
+                          type="text"
+                          name={`name-${item.id}-${index}`}
+                          placeholder="Smith"
+                          required
+                        />
+                      </div>
+
                       <div className={styles.labelAndInput}>
                         <label>Date of birth</label>
                         <input
@@ -106,11 +95,11 @@ export default function BookingInfo() {
                           name={`email-${item.id}-${index}`}
                           placeholder="Write here.."
                           required
-                          onChange={(e) => handleInputChange(e, item)}
                         />
                       </div>
                     </div>
                   </div>
+                  <input type="submit" value="Submit" />
                 </form>
               ))}
             </li>

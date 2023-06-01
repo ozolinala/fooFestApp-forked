@@ -157,11 +157,23 @@ function CheckoutTest() {
             Previous
           </Button>
         )}
-        {current < steps.length - 1 && (
+        {current < steps.length - 2 && (
           <Button type="primary" onClick={() => next()}>
             Next
           </Button>
         )}
+        {current === 3 && (
+          <Button
+            type="primary"
+            onClick={() => {
+              next();
+              message.success("Form submitted");
+            }}
+          >
+            Next
+          </Button>
+        )}
+
         {current === steps.length - 1 && (
           <Button type="primary" onClick={() => message.success("Booking complete!")}>
             Done
