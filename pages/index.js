@@ -18,6 +18,7 @@ export default function Home({ data }) {
           {" "}
           <h2>
             {" "}
+
            
            <sup className={styles.about}>(ABOUT) </sup> <div className={styles.written}>foo</div>fest ⸺ is the gateway to a
             mesmerizing journey where the Nordic summer ignites, the midnight
@@ -50,6 +51,7 @@ export default function Home({ data }) {
         </div>
         <div className={styles.box}>
         <div className={styles.textContainer}> <p className={styles.centeredText2}><span className={styles.writtenBuyTickets}>See</span>Program →</p><p className={styles.centeredText3}>More music and events will be added to the program.</p></div>
+
         </div>
       </div>
     </div>

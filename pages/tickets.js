@@ -1,9 +1,11 @@
-import Head from 'next/head'
-import fs from 'fs';
-import Ticket from '@/components/Ticket';
+
+import Head from "next/head";
+import fs from "fs";
+import Ticket from "@/components/Ticket";
+
 import styles from "@/styles/Basket.module.css";
 
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -12,24 +14,22 @@ export default function Home({data}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-<div className={styles.wrapper}>
-  <h1>Tickets</h1>
-  <article className={styles.ticketstyle}>
-    {data.map((ticket) => ( 
-        <Ticket key={ticket.id} {...ticket}/>
-        ))}
-    {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
-  </article>
-</div>
+      <div className={styles.wrapper}>
+        <h1>Tickets</h1>
+        <article className={styles.ticketstyle}>
+          {data.map((ticket) => (
+            <Ticket key={ticket.id} {...ticket} />
+          ))}
+          {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+        </article>
+      </div>
     </>
   );
 }
 
-
-
 export async function getStaticProps() {
   // Read the JSON file that we made
-  const fileContents = fs.readFileSync('./tickets.json', 'utf8');
+  const fileContents = fs.readFileSync("./tickets.json", "utf8");
   const data = JSON.parse(fileContents);
   return {
     props: {

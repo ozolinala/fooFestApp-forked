@@ -1,0 +1,8 @@
+.BookingItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BookingItem span {
+  font-size: 1.2rem;
+}

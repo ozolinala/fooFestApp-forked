@@ -1,0 +1,16 @@
+.paymentFormFlex label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paymentFormFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paymentFormFlex > div {
+  display: flex;
+  gap: 2rem;
+}

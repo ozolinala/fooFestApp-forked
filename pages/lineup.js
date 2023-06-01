@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Ticket from "@/components/Ticket";
+
 import styles from "@/styles/Lineup.module.css";
 import { useState, useEffect } from "react";
+
 
 export default function LineUp() {
   const [data, setData] = useState([]);
@@ -21,6 +22,7 @@ export default function LineUp() {
 
     fetchData();
   }, []);
+
   return (
     <>
       <Head>
@@ -32,6 +34,7 @@ export default function LineUp() {
       <div className={styles.wrapper}>
         <h1>
           {" "}
+
           <span className={styles.written}>Featured</span> Artists
         </h1>
       </div>
@@ -49,10 +52,12 @@ export default function LineUp() {
         <div className={styles.hidden}>&nbsp;</div>
         <img src="pics/artist6.webp" alt={`artist6`} />
       </div>
+
       <div className={styles.wrapper}>
         <h1 className={styles.lineup}>LINE-UP</h1>
         <h4>01.01 ⸺ 31.21.2023</h4>
         <div className={styles.artistLineup}>
+
           <div className={styles.hidden}> &nbsp; </div>
           <div>
             {data.slice(0, 40).map((item) => (
@@ -61,6 +66,7 @@ export default function LineUp() {
               </h4>
             ))}
           </div>
+
         </div>
       </div>
     </>

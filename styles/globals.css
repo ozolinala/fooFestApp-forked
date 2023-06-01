@@ -6,34 +6,34 @@
 /* colors */
 
 :root {
-  --accent-color: #DFFE00;
-  --main-black:#1E1E1E;
-  --grey:#EFEFF0;
+  --accent-color: #dffe00;
+  --main-black: #1e1e1e;
+  --grey: #efeff0;
 }
-h1{
-  color:var(--main-black);
+h1 {
+  color: var(--main-black);
   font-size: 100px;
   font-weight: 300;
   margin-bottom: 4vh;
 }
-h2{
-  color:var(--main-black);
+h2 {
+  color: var(--main-black);
   font-size: 58px;
   margin-bottom: 4vh;
 }
-h3{
+h3 {
   font-size: 32px;
   margin-bottom: 4vh;
 }
-h4{
+h4 {
   font-size: 22px;
   margin-bottom: 4vh;
 }
-form input{
+form input {
   border: none;
-background-color: var(--grey);
-padding: 1vh;
-border-radius: 8px;
+  background-color: var(--grey);
+  padding: 1vh;
+  border-radius: 8px;
 }
 /*fonts*/
 
@@ -81,24 +81,26 @@ body {
 
 a {
   text-decoration: none;
-  color:var(--main-black);
+  color: var(--main-black);
 }
+
 a:hover{
   opacity:0.85;
+
   transition: ease-in 0.2s;
 }
-button{
+button {
   pointer-events: pointer;
-  border:none;
+  border: none;
   padding: 2vh 4vh 2vh 4vh;
   background-color: var(--accent-color);
   border-radius: 50px;
-  color:black;
+  color: black;
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
-button:hover{
-  background-color: #D4F507;
+button:hover {
+  background-color: #d4f507;
   transition: ease-in 0.2s;
 }
 ul {
@@ -108,4 +110,10 @@ ul {
 p {
   margin-block-start: 0.4em;
   margin-block-end: 0.4em;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1.4px solid var(--main-black);
 }

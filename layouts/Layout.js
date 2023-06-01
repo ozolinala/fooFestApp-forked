@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Badge } from "antd";
 import styles from "@/styles/Home.module.css";
@@ -67,6 +68,7 @@ export default function Layout({ children }) {
               alt="Profile"
               style={{ fill: svgColor }}
             />
+
           </Link>
         </div>
       </nav>
@@ -74,11 +76,13 @@ export default function Layout({ children }) {
       <div className={styles.Footer}>
         <div className={styles.Footerbox}>
           <div className={styles.leftFooter}>
+
             <img
               className={styles.longLogo}
               src="/pics/longLogo.svg"
               alt="Logo"
             ></img>
+
             <p>Svinoy bygd, Faroe Islands</p>
             <a href="tel: +45 85 85 85 85">+45 85 85 85 85</a> <br></br>
             <a href="mailto: abc@example.com">info@foofest.dk</a>
@@ -114,11 +118,13 @@ export default function Layout({ children }) {
             </ul>
           </div>
         </div>
+
         <p className={styles.copyright}>
           © This is a student project website. 2023
         </p>
       </div>
       <AppNavbar />
+
     </>
   );
 }

@@ -1,10 +1,21 @@
 import React from "react";
+
 import Link from "next/link";
+
 import styles from "@/styles/Home.module.css";
 
 export const HeroSection = () => {
   return (
     <div className={styles.HeroSection}>
+
+      <div className={styles.heroText}>
+        <h1>FOOFEST</h1>
+      </div>
+      <div className={styles.heroGraphics}></div>
+    </div>
+  );
+
+
       <img className={styles.heroImage} src="pics/home.webp" alt={`artist1`} />
       <p className={styles.coordinates}>61.8926° N, 6.9118° W</p>
       <div className={styles.heroTextContainer}>
@@ -21,5 +32,6 @@ export const HeroSection = () => {
       <Link href="./tickets"> <p className={styles.buyTickets}><div className={styles.writtenBuy}>Buy </div>Tickets →</p></Link>
     </div>
   );
+
 };
 
