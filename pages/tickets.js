@@ -1,6 +1,8 @@
+
 import Head from "next/head";
 import fs from "fs";
 import Ticket from "@/components/Ticket";
+
 import styles from "@/styles/Basket.module.css";
 
 export default function Home({ data }) {

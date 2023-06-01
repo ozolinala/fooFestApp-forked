@@ -1,28 +1,15 @@
-.OneDaySchedule {
-  display: flex;
-  justify-content: space-between;
-  width: 95%;
-  margin: auto;
-}
-
 .ArtistInfo {
   display: flex;
   flex-direction: column;
 }
 
-.nameAndGenre {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-}
-
 .Schedule {
-  display: flex;
-  justify-content: center;
+  width: 60%;
+  margin: auto;
 }
 
 .weekTabs {
-  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .ActInfoContainer {
@@ -35,4 +22,125 @@
 .ActInfo {
   display: flex;
   gap: 2rem;
+  font-size: 18px;
+  align-items: center;
+}
+
+.written {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+  font-size: 110px;
+}
+
+.Main {
+  padding: 5vh;
+}
+.programImage {
+  position: absolute;
+  z-index: -100;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 97%;
+  left: 0;
+  top: 0;
+}
+.ProgramSection {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.midgardPin img {
+  width: 5rem;
+}
+
+.midgardPin {
+  position: absolute;
+  left: 10rem;
+  top: 12rem;
+}
+
+.JotunheimPin img {
+  width: 7rem;
+}
+
+.JotunheimPin {
+  position: absolute;
+  right: 15rem;
+  top: 17rem;
+}
+
+.VanaheimPin img {
+  width: 9rem;
+}
+
+.VanaheimPin {
+  position: absolute;
+  left: 26rem;
+  top: 24rem;
+}
+
+.ProgramSection > div {
+  color: var(--accent-color);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .verticalSchedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+  }
+
+  .Schedule {
+    width: 100%;
+    margin: auto;
+  }
+
+  .ProgramSection > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--accent-color);
+  }
+
+  .midgardPin img {
+    width: 2rem;
+  }
+
+  .midgardPin {
+    position: relative;
+  }
+
+  .JotunheimPin img {
+    width: 2rem;
+  }
+
+  .JotunheimPin {
+    position: absolute;
+  }
+
+  .VanaheimPin img {
+    width: 2rem;
+  }
+
+  .VanaheimPin {
+    position: absolute;
+    left: 6rem;
+    top: 30rem;
+  }
+
+  .programTitle {
+    font-size: 4em;
+    margin-top: 4vh;
+  }
+
+  .written {
+    font-size: 1em;
+  }
 }

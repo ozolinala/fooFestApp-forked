@@ -19,28 +19,110 @@
   gap: 0.8rem;
 }
 
+
+.mobile {
+  display: none;
+}
+
+.AppNavLinks {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+}
+
+.AppNavLinks li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+
 .Header {
   width: 90%;
   margin: auto;
 }
 
 .Main {
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 
 .HeroSection {
   height: 90vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
-.announcement {
+.flexContainer {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
+.row {
+  width: 100%;
+  display: flex;
+  height: 120vh;
+}
+
+.box {
+  flex-basis: 50%;
+  position: relative;
+}
+.buttonText {
+  font-size: 45px;
+  position: absolute;
+  bottom: 2%;
+  right: 3%;
+  display: inline;
+}
+.artistsText {
+  font-size: 45px;
+  position: absolute;
+  top: 2%;
+  left: 3%;
+}
+.artistsText2 {
+  font-size: 25px;
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+  left: 5%;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.centeredText {
+  text-align: center;
+  font-size: 25px;
+}
+.centeredText2 {
+  text-align: center;
+  font-size: 45px;
+}
+.centeredText3 {
+  text-align: center;
+  font-size: 17px;
+}
 .Newsletter {
   display: flex;
   flex-direction: column;
@@ -58,6 +140,7 @@
   width: 60px;
   height: auto;
 }
+
 .longLogo {
   width: 120px;
   margin-bottom: 4vh;
@@ -67,20 +150,108 @@
 .announcement > div {
   flex-basis: 50%;
 }
+
+.lineText h3 {
+  margin-bottom: 0;
+}
+.lineText {
+  justify-content: center;
+}
+.coordinates {
+  color: white;
+  position: absolute;
+  font-size: 25px;
+  left: 1%;
+  top: 4%;
+  writing-mode: vertical-rl;
+}
+.dates {
+  color: white;
+  position: absolute;
+  font-size: 35px;
+  left: 3%;
+  bottom: 4%;
+}
+.buyTickets {
+  color: white;
+  position: absolute;
+  font-size: 35px;
+  right: 3%;
+  bottom: 4%;
+}
+.buyTickets:hover {
+  color: var(--accent-color);
+  opacity: 1;
+}
+.heroTextContainer {
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  height: 100%; /* Ensure the container takes up the full height */
+}
+
+.heroText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* Add any additional styles for the heroText */
+}
+
 .written {
   font-family: "FiveSerifLightItalic";
   display: inline;
 }
+
+.writtenNew {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+  font-size: 30px;
+}
+.writtenBuy {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+  font-size: 40px;
+}
+.writtenBuyTickets {
+  font-family: "FiveSerifLightItalic";
+  display: inline;
+  font-size: 50px;
+  margin-right: 3%;
+}
+.writtenFoo {
+  font-family: "FiveSerifLightItalic";
+  font-size: 300px;
+  justify-content: center;
+  display: inline;
+  color: var(--accent-color);
+}
+.writtenBox {
+  font-family: "FiveSerifLightItalic";
+  font-size: 35px;
+  display: inline;
+}
+.writtenFoo h3 {
+  font-family: "Studio6Regular";
+  font-size: 20px;
+}
+
 .about {
   font-size: 17px;
   display: inline;
 }
 .landingLetters {
   margin-bottom: 15%;
+
+  width: 90%;
+  margin: auto;
+  margin-top: 10vh;
 }
 .landingLetters h2 {
   text-justify: inter-character;
 }
+
 .Footerbox {
   display: flex;
   justify-content: space-between;
@@ -112,10 +283,48 @@
   color: white;
   line-height: 2rem;
 }
+.heroImage {
+  position: absolute;
+  z-index: -100;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 97%;
+  left: 0;
+  top: 0;
+}
+
+.thankYouContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 8rem;
+  text-align: center;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   .leftFooter {
     width: auto;
     margin-bottom: 6vh;
+  }
+  .writtenNew {
+    font-size: 25px;
+  }
+  .writtenFoo {
+    font-size: 240px;
+  }
+  .writtenFoo h3 {
+    font-size: 18px;
+  }
+  .coordinates {
+    font-size: 20px;
+  }
+  .dates {
+    font-size: 25px;
+  }
+  .buyTickets {
+    bottom: 3%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -123,5 +332,135 @@
   .leftFooter {
     width: 100%;
     margin-bottom: 6vh;
+  }
+  .writtenNew {
+    font-size: 20px;
+  }
+  .writtenFoo {
+    font-size: 170px;
+  }
+  .writtenFoo h3 {
+    font-size: 15px;
+  }
+  .coordinates {
+    font-size: 18px;
+  }
+  .dates {
+    font-size: 20px;
+  }
+  .buyTickets {
+    bottom: 3%;
+    font-size: 30px;
+  }
+  .writtenBuy {
+    font-size: 35px;
+  }
+
+  .mobile {
+    display: inline;
+  }
+
+  .mobileHidden {
+    display: none;
+  }
+
+  .Footer {
+    padding: 0vh 0vh 6vh 3vh;
+    margin-top: 7vh;
+    color: white;
+    background-color: var(--main-black);
+  }
+
+  .row {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 100%;
+  }
+
+  .box {
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .box:nth-child(2 + 1) {
+    order: -1; /* Reverses the order of the 3rd and 4th boxes */
+  }
+
+  .artistsText {
+    font-size: 25px;
+    position: static;
+    text-align: center;
+  }
+
+  .artistsText2 {
+    width: 90%;
+    margin: auto;
+    font-size: 14px;
+    position: static;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .textContainer {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: auto;
+  }
+
+  .centeredText {
+    text-align: center;
+    font-size: 18px;
+    width: 70%;
+  }
+
+  .centeredText2 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .centeredText3 {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .Newsletter {
+    width: 100%;
+    padding: 4rem;
+  }
+
+  .Footerbox {
+    flex-direction: column;
+    gap: 2vh;
+    padding: 3vh;
+  }
+
+  .leftFooter {
+    width: 100%;
+  }
+
+  .Footer {
+    padding: 2vh 0vh;
+  }
+
+  .landingLetters h2 {
+    font-size: 20px;
+  }
+
+  .buttonText {
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 40%;
+  }
+
+  .writtenBuyTickets {
+    font-size: 30px;
   }
 }

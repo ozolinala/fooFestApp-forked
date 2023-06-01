@@ -16,13 +16,16 @@ function DaySchedule({ day, venues }) {
     <List
       dataSource={filteredSchedule}
       renderItem={(item) => (
-        <List.Item>
+
+        <List.Item className={styles.verticalSchedule}>
           <h3>{item.venue}</h3>
           <div className={styles.ActInfoContainer}>
             {item.events.length > 0 ? (
               item.events.map((event, index) => (
                 <div className={styles.ActInfo} key={index}>
+
                   <p>{event.act.toUpperCase()}</p>
+
                   <p>
                     {event.start.split(":")[0]}-{event.end.split(":")[0]}
                   </p>

@@ -39,7 +39,12 @@ function Basket() {
       <p>
         <strong>Total price:</strong> DKK {totalPrice},-
       </p>
-      <button className={styles.delete} onClick={() => dispatch({ action: "EMPTY_BASKET" })}>
+
+      <button
+        className={styles.delete}
+        onClick={() => dispatch({ action: "EMPTY_BASKET" })}
+      >
+
         Clear Basket
       </button>{" "}
       <Link className={styles.checkout} href="/checkout">

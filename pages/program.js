@@ -3,6 +3,9 @@ import styles from "@/styles/Program.module.css";
 import React, { useState } from "react";
 import { Newsletter } from "@/components/Newsletter";
 import { Tabs } from "antd";
+
+import { ProgramSection } from "@/components/ProgramSection";
+
 import DaySchedule from "@/components/DaySchedule";
 const { TabPane } = Tabs;
 
@@ -22,7 +25,10 @@ function Program({ venues }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.Main}>
-        <h1>PROGRAM</h1>
+        <ProgramSection />
+        <h1 className={styles.programTitle}>
+          <span className={styles.written}>Festival's</span> Program
+        </h1>
         <div className={styles.Schedule}>
           <div>
             <Tabs activeKey={activeTab} onChange={handleTabChange}>
