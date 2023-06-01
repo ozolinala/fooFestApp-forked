@@ -49,8 +49,16 @@
 .Steps {
   width: 80%;
   margin: auto;
+  
 }
 
 .CheckoutButtons {
   text-align: center;
+}
+
+.SelectedTickets {
+  line-height: "1rem";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
