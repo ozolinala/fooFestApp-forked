@@ -14,6 +14,45 @@ function CheckoutTest() {
   /* data */
 
   const [products, setProducts] = useState([]);
+  const [info, setInfo] = useState([]);
+
+  /* sending data */
+
+  function postData() {
+    const orderNumber = uuidv4();
+    const camping = products.find((item) => item.type === "Camping");
+    const optional = products
+      .filter((item) => item.type === "Optional")
+      .map((option) => option.name);
+
+    info.forEach((personInfo) => {
+      const personData = {
+        ...personInfo,
+        orderNumber: orderNumber,
+        campingArea: camping.name,
+        optional: optional,
+      };
+
+      postInfo(personData);
+    });
+  }
+
+  /* posting on database */
+
+  function postInfo(info) {
+    fetch("https://libzxtdzurkelchwpgbe.supabase.co/rest/v1/Purchases", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Prefer: "return=representation",
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxpYnp4dGR6dXJrZWxjaHdwZ2JlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQxNDU4NTEsImV4cCI6MTk5OTcyMTg1MX0.Z0KqBmrET-k1eFg9V1SXhdL45nPVLyMP62lYxVs5NJg",
+      },
+      body: JSON.stringify(info),
+    })
+      .then((data) => data.json())
+      .then();
+  }
 
   /* total ticket amount, price */
   const [totalAmount, setTotalAmount] = useState(0);
@@ -97,7 +136,7 @@ function CheckoutTest() {
             padding: "2rem",
           }}
         >
-          <BookingInfo products={products} setProducts={setProducts} />
+          <BookingInfo info={info} setInfo={setInfo} />
           <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
         </div>
       ),
@@ -144,6 +183,7 @@ function CheckoutTest() {
     border: `1px dashed ${token.colorBorder}`,
     marginTop: 16,
   };
+
   return (
     <>
       <div className={styles.CheckoutButtons}>
@@ -157,26 +197,21 @@ function CheckoutTest() {
             Previous
           </Button>
         )}
-        {current < steps.length - 2 && (
+        {current < steps.length - 1 && (
           <Button type="primary" onClick={() => next()}>
-            Next
-          </Button>
-        )}
-        {current === 3 && (
-          <Button
-            type="primary"
-            onClick={() => {
-              next();
-              message.success("Form submitted");
-            }}
-          >
             Next
           </Button>
         )}
 
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success("Booking complete!")}>
-            Done
+          <Button
+            type="primary"
+            onClick={() => {
+              postData();
+              message.success("Booking Complete!");
+            }}
+          >
+            Pay
           </Button>
         )}
       </div>
