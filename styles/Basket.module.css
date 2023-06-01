@@ -1,16 +1,21 @@
 .ticketPage  {
  padding-left: 6vh;
  padding-right: 6vh;
+ padding-top: 4vh;
  width: 320px;
+ height: 250px;
   background-color: var(--grey);
   border-radius:7%;
   margin-bottom: 10%;
+  position: relative;
 }
 .ticketPage p {
-  padding-top: 3vh;
+  padding-top: 0vh;
  }
  .ticketPage button {
-  margin-bottom: 3vh;
+  position: absolute;
+  top: 60%; /* Adjust the value as needed */
+  right: 2rem; /* Adjust the value as needed */
  }
 .wrapper {
   padding: 5vh;
