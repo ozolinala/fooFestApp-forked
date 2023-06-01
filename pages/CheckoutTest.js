@@ -1,6 +1,6 @@
 import { React, useState, useContext, useEffect } from "react";
 import { Button, message, Steps, theme } from "antd";
-import SelectOptional from "./components/SelectOptional.js";
+import SelectOptional from "@/components/SelectOptional.js";
 import styles from "@/styles/Checkout.module.css";
 import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
