@@ -14,7 +14,6 @@ function Program({ venues }) {
     setActiveTab(key);
   };
 
-
   return (
     <>
       <Head>
@@ -24,8 +23,8 @@ function Program({ venues }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.Main}>
-        <ProgramSection/>
-        <h1>
+        <ProgramSection />
+        <h1 className={styles.programTitle}>
           <span className={styles.written}>Festival's</span> Program
         </h1>
         <div className={styles.Schedule}>

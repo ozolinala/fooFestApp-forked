@@ -134,4 +134,13 @@
     left: 6rem;
     top: 30rem;
   }
+
+  .programTitle {
+    font-size: 4em;
+    margin-top: 4vh;
+  }
+
+  .written {
+    font-size: 1em;
+  }
 }

@@ -237,8 +237,10 @@
 }
 .landingLetters {
   margin-bottom: 15%;
-  margin-top: 8%;
-  margin-left: 3%;
+
+  width: 90%;
+  margin: auto;
+  margin-top: 10vh;
 }
 .landingLetters h2 {
   text-justify: inter-character;
@@ -345,5 +347,105 @@
 
   .mobileHidden {
     display: none;
+  }
+
+  .Footer {
+    padding: 0vh 0vh 6vh 3vh;
+    margin-top: 7vh;
+    color: white;
+    background-color: var(--main-black);
+  }
+
+  .row {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 100%;
+  }
+
+  .box {
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .box:nth-child(2 + 1) {
+    order: -1; /* Reverses the order of the 3rd and 4th boxes */
+  }
+
+  .artistsText {
+    font-size: 25px;
+    position: static;
+    text-align: center;
+  }
+
+  .artistsText2 {
+    width: 90%;
+    margin: auto;
+    font-size: 14px;
+    position: static;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .textContainer {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    height: auto;
+  }
+
+  .centeredText {
+    text-align: center;
+    font-size: 18px;
+    width: 70%;
+  }
+
+  .centeredText2 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .centeredText3 {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .Newsletter {
+    width: 100%;
+    padding: 4rem;
+  }
+
+  .Footerbox {
+    flex-direction: column;
+    gap: 2vh;
+    padding: 3vh;
+  }
+
+  .leftFooter {
+    width: 100%;
+  }
+
+  .Footer {
+    padding: 2vh 0vh;
+  }
+
+  .landingLetters h2 {
+    font-size: 20px;
+  }
+
+  .buttonText {
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 40%;
+  }
+
+  .writtenBuyTickets {
+    font-size: 30px;
   }
 }
