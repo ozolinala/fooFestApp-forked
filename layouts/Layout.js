@@ -32,12 +32,6 @@ export default function Layout({ children }) {
         </Link>
         <ul className={styles.navLinks}>
           <li>
-            <Link href="./about">
-              {" "}
-              <a style={{ color: textColor }}>ABOUT</a>
-            </Link>
-          </li>
-          <li>
             <Link href="./lineup">
               {" "}
               <a style={{ color: textColor }}>LINE-UP</a>
