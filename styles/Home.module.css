@@ -242,7 +242,7 @@
   display: inline;
 }
 .landingLetters {
-  margin-bottom: 15%;
+  margin-bottom: 25%;
 
   width: 90%;
   margin: auto;
@@ -250,6 +250,7 @@
 }
 .landingLetters h2 {
   text-justify: inter-character;
+  margin-bottom: 15%;
 }
 
 .Footerbox {
@@ -449,7 +450,9 @@
   }
 
   .landingLetters h2 {
-    font-size: 20px;
+    font-size: 40px;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
   }
 
   .buttonText {
