@@ -14,9 +14,10 @@
  }
  .ticketPage button {
   position: absolute;
-  top: 60%; /* Adjust the value as needed */
-  right: 2rem; /* Adjust the value as needed */
+  top: 60%; 
+  right: 2rem;
  }
+
 .wrapper {
   padding: 5vh;
 }
@@ -51,6 +52,10 @@
   background-color: var(--accent-color);
   border-radius: 50px;
   color: var(--main-black);
+}
+.checkout:hover {
+  background-color: #d4f507;
+  opacity:1;
 }
 .ticketstyle {
   display: flex;
