@@ -5,10 +5,14 @@ import styles from "@/styles/Checkout.module.css";
 import Camping from "@/components/Camping.js";
 import Booking from "@/components/Booking.js";
 import PaymentForm from "@/components/PaymentForm.js";
-import { v4 as uuidv4 } from "uuid";
 import SelectedTickets from "@/components/SelectedTickets.js";
 import { StoreContext } from "@/contexts/storeContext";
 import BookingInfo from "@/components/BookingInfo.js";
+
+const mainButtonStyle = {
+  backgroundColor: "#DFFE08",
+  color: "black",
+};
 
 function CheckoutTest() {
   /* data */
@@ -158,16 +162,17 @@ function CheckoutTest() {
           </Button>
         )}
         {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()}>
+          <Button type="primary" style={mainButtonStyle} onClick={() => next()}>
             Next
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success("Booking complete!")}>
+          <Button type="primary" style={mainButtonStyle} onClick={() => message.success("Booking complete!")}>
             Done
           </Button>
         )}
       </div>
+      
       <Steps className={styles.Steps} current={current} items={items} />
       <div style={contentStyle}>{steps[current].content}</div>
     </>
