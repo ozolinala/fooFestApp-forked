@@ -1,10 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import { useState, useEffect } from "react";
 
 export default function ThankYou() {
-  const [data, setData] = useState([]);
-
   return (
     <>
       <Head>
@@ -27,8 +24,8 @@ export default function ThankYou() {
         </svg>
         <h2 className={styles.written}>Thank you!</h2>
         <h4>
-          We've sent you an email with all your ticket information. <br />{" "}
-          Follow us to stay updated!
+          We've sent you an email with all your ticket information. <br /> Follow us to stay
+          updated!
         </h4>
 
         <p>

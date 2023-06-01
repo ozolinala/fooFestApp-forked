@@ -2,9 +2,7 @@
   padding: 5vh;
 }
 .wrapper li {
-
   padding-bottom: 2vh;
-
 }
 .wrapper form input,
 .wrapper form label {
@@ -63,7 +61,6 @@
   background-color: #e7e7e7;
 }
 
-
 .formContainer {
   display: flex;
 }
@@ -100,10 +97,10 @@
 
 .labelAndInput input {
   font-size: 18px;
+}
 
 @media (max-width: 768px) {
   .wrapper h1 {
     font-size: 4em;
   }
-
 }

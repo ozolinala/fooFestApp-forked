@@ -1,4 +1,4 @@
-import { React, useState, useContext, useEffect } from "react";
+import { React, useState, useContext, useEffect, Link } from "react";
 import { Button, message, Steps, theme } from "antd";
 import SelectOptional from "@/components/SelectOptional.js";
 import styles from "@/styles/Checkout.module.css";
@@ -10,7 +10,7 @@ import SelectedTickets from "@/components/SelectedTickets.js";
 import { StoreContext } from "@/contexts/storeContext";
 import BookingInfo from "@/components/BookingInfo.js";
 
-function CheckoutTest() {
+function checkout() {
   /* data */
 
   const [products, setProducts] = useState([]);
@@ -205,6 +205,7 @@ function CheckoutTest() {
 
         {current === steps.length - 1 && (
           <Button
+            href="/thankYou"
             type="primary"
             onClick={() => {
               postData();
@@ -221,4 +222,4 @@ function CheckoutTest() {
   );
 }
 
-export default CheckoutTest;
+export default checkout;

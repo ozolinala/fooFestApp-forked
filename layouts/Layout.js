@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Badge } from "antd";
 import styles from "@/styles/Home.module.css";
@@ -54,35 +53,18 @@ export default function Layout({ children }) {
         <div className={styles.navIcons}>
           <Badge count={itemCount} style={badgeStyle}>
             <Link href="./basket">
-              <img
-                src="/pics/ticket.svg"
-                alt="Cart"
-                style={{ fill: svgColor }}
-              />
+              <img src="/pics/ticket.svg" alt="Cart" style={{ fill: svgColor }} />
             </Link>
           </Badge>
 
-          <Link href="./checkout">
-            <img
-              src="/pics/user.svg"
-              alt="Profile"
-              style={{ fill: svgColor }}
-            />
-
-          </Link>
+          <img src="/pics/user.svg" alt="Profile" style={{ fill: svgColor }} />
         </div>
       </nav>
       <main>{children}</main>
       <div className={styles.Footer}>
         <div className={styles.Footerbox}>
           <div className={styles.leftFooter}>
-
-            <img
-              className={styles.longLogo}
-              src="/pics/longLogo.svg"
-              alt="Logo"
-            ></img>
-
+            <img className={styles.longLogo} src="/pics/longLogo.svg" alt="Logo"></img>
             <p>Svinoy bygd, Faroe Islands</p>
             <a href="tel: +45 85 85 85 85">+45 85 85 85 85</a> <br></br>
             <a href="mailto: abc@example.com">info@foofest.dk</a>
@@ -119,12 +101,9 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <p className={styles.copyright}>
-          © This is a student project website. 2023
-        </p>
+        <p className={styles.copyright}>© This is a student project website. 2023</p>
       </div>
       <AppNavbar />
-
     </>
   );
 }
