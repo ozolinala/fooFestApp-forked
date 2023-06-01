@@ -35,15 +35,15 @@
 .Main {
   padding: 5vh;
 }
-.programImage{
+.programImage {
   position: absolute;
   z-index: -100;
   width: 100%;
   object-fit: cover;
   overflow: hidden;
   height: 97%;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
 }
 .ProgramSection {
   height: 90vh;
@@ -51,6 +51,44 @@
   justify-content: center;
   align-items: center;
 }
+
+.midgardPin img {
+  width: 5rem;
+}
+
+.midgardPin {
+  position: absolute;
+  left: 10rem;
+  top: 12rem;
+}
+
+.JotunheimPin img {
+  width: 7rem;
+}
+
+.JotunheimPin {
+  position: absolute;
+  right: 15rem;
+  top: 17rem;
+}
+
+.VanaheimPin img {
+  width: 9rem;
+}
+
+.VanaheimPin {
+  position: absolute;
+  left: 26rem;
+  top: 24rem;
+}
+
+.ProgramSection > div {
+  color: var(--accent-color);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
   .verticalSchedule {
     display: flex;
@@ -62,5 +100,38 @@
   .Schedule {
     width: 100%;
     margin: auto;
+  }
+
+  .ProgramSection > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--accent-color);
+  }
+
+  .midgardPin img {
+    width: 2rem;
+  }
+
+  .midgardPin {
+    position: relative;
+  }
+
+  .JotunheimPin img {
+    width: 2rem;
+  }
+
+  .JotunheimPin {
+    position: absolute;
+  }
+
+  .VanaheimPin img {
+    width: 2rem;
+  }
+
+  .VanaheimPin {
+    position: absolute;
+    left: 6rem;
+    top: 30rem;
   }
 }
