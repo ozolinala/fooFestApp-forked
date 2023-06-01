@@ -73,6 +73,26 @@ function checkout() {
   }, [data.basket]);
 
   /* antd step pages */
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Check if window is defined (browser environment) before adding the event listener
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+    }
+
+    return () => {
+      // Check if window is defined (browser environment) before removing the event listener
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
+  }, []);
   const steps = [
     {
       title: "Selected Tickets",
@@ -81,12 +101,22 @@ function checkout() {
           style={{
             lineHeight: "1rem",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: windowWidth < 768 ? "column" : "row",
             justifyContent: "space-around",
+            alignItems: windowWidth < 768 ? "center" : "start",
+            gap: windowWidth < 768 ? "4rem" : "0rem",
+            padding: "3rem",
           }}
         >
-          <SelectedTickets products={products} setProducts={setProducts}></SelectedTickets>
-          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
+          <SelectedTickets
+            products={products}
+            setProducts={setProducts}
+          ></SelectedTickets>
+          <Booking
+            products={products}
+            setProducts={setProducts}
+            totalPrice={totalPrice}
+          />
         </div>
       ),
     },
@@ -97,13 +127,19 @@ function checkout() {
           style={{
             lineHeight: "1rem",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: windowWidth < 768 ? "column" : "row",
             justifyContent: "space-around",
+            alignItems: windowWidth < 768 ? "center" : "start",
             padding: "2rem",
+            gap: windowWidth < 768 ? "4rem" : "0rem",
           }}
         >
           <Camping products={products} setProducts={setProducts} />
-          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
+          <Booking
+            products={products}
+            setProducts={setProducts}
+            totalPrice={totalPrice}
+          />
         </div>
       ),
     },
@@ -114,13 +150,19 @@ function checkout() {
           style={{
             lineHeight: "1rem",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: windowWidth < 768 ? "column" : "row",
             justifyContent: "space-around",
+            alignItems: windowWidth < 768 ? "center" : "start",
             padding: "2rem",
+            gap: windowWidth < 768 ? "4rem" : "0rem",
           }}
         >
           <SelectOptional products={products} setProducts={setProducts} />
-          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
+          <Booking
+            products={products}
+            setProducts={setProducts}
+            totalPrice={totalPrice}
+          />
         </div>
       ),
     },
@@ -131,13 +173,19 @@ function checkout() {
           style={{
             lineHeight: "1rem",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: windowWidth < 768 ? "column" : "row",
             justifyContent: "space-around",
+            alignItems: windowWidth < 768 ? "center" : "start",
             padding: "2rem",
+            gap: windowWidth < 768 ? "4rem" : "0rem",
           }}
         >
           <BookingInfo info={info} setInfo={setInfo} />
-          <Booking products={products} setProducts={setProducts} totalPrice={totalPrice} />
+          <Booking
+            products={products}
+            setProducts={setProducts}
+            totalPrice={totalPrice}
+          />
         </div>
       ),
     },
@@ -148,9 +196,11 @@ function checkout() {
           style={{
             lineHeight: "1rem",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: windowWidth < 768 ? "column" : "row",
             justifyContent: "space-around",
+            alignItems: windowWidth < 768 ? "center" : "start",
             padding: "2rem",
+            gap: windowWidth < 768 ? "4rem" : "0rem",
           }}
         >
           <PaymentForm />
