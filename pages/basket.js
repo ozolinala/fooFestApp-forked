@@ -33,8 +33,8 @@ function Basket() {
           return <Cartitem {...item} />;
         })}
       </ul>
-      <p>
-        <strong>Total amount of tickets:</strong> {totalAmount}
+      <p className={styles.amount}>
+        <strong >Total amount of tickets:</strong> {totalAmount}
       </p>
       <p>
         <strong>Total price:</strong> DKK {totalPrice},-
