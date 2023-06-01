@@ -53,11 +53,11 @@ export default function Layout({ children }) {
         <div className={styles.navIcons}>
           <Badge count={itemCount} style={badgeStyle}>
             <Link href="./basket">
-              <img src="/pics/ticket.svg" alt="Cart" style={{ fill: svgColor }} />
+              <img src="/pics/ticket.svg" alt="Cart" style={{ stroke: svgColor }} />
             </Link>
           </Badge>
 
-          <img src="/pics/user.svg" alt="Profile" style={{ fill: svgColor }} />
+          <img src="/pics/user.svg" alt="Profile" style={{ stroke: svgColor }} />
         </div>
       </nav>
       <main>{children}</main>

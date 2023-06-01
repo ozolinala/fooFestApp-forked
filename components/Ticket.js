@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DispatchContext } from "@/contexts/storeContext";
+import styles from "@/styles/Basket.module.css";
 
 function Ticket(props) {
     const dispatch = useContext(DispatchContext);
@@ -16,10 +17,10 @@ function Ticket(props) {
 
     return (
         
-        <article>
+        <article className={styles.ticketPage}>
             <p>{props.id}</p>
             <h3>{props.name}</h3>
-<p>Price: {props.price}</p>
+<p>Price: DKK {props.price},- </p>
             
 <button onClick={addToBasket}>Add to cart</button>
             </article>
