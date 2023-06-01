@@ -105,6 +105,7 @@ function checkout() {
             justifyContent: "space-around",
             alignItems: windowWidth < 768 ? "center" : "start",
             gap: windowWidth < 768 ? "4rem" : "0rem",
+            padding: "3rem",
           }}
         >
           <SelectedTickets
