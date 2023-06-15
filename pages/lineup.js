@@ -1,11 +1,13 @@
 import Head from "next/head";
-
+import { useRouter } from "next/router";
+import Link from "next/link"; 
 import styles from "@/styles/Lineup.module.css";
 import { useState, useEffect } from "react";
 
 
 export default function LineUp() {
   const [data, setData] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +24,11 @@ export default function LineUp() {
 
     fetchData();
   }, []);
+
+// for the artist page
+const redirectToArtistPage = (artistSlug) => {
+  router.push(`/${artistSlug}`);
+};
 
   return (
     <>
@@ -60,11 +67,18 @@ export default function LineUp() {
 
           <div className={styles.hidden}> &nbsp; </div>
           <div>
-            {data.slice(0, 40).map((item) => (
-              <h4 className={styles.rightAligned} key={item.id}>
-                {item.name} /&nbsp;
+          {data.map((artist) => (
+              <h4 className={styles.rightAligned} key={artist.name}>
+                <a
+                  href="#"
+                  onClick={() => redirectToArtistPage(artist.slug)}
+                >
+                  {artist.name}
+                </a>{" "}
+                /&nbsp;
               </h4>
             ))}
+
           </div>
 
         </div>
