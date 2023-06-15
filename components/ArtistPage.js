@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import styles from "@/styles/Lineup.module.css";
 
 const ArtistPage = ({ artistSlug }) => {
   const [artist, setArtist] = useState(null);
@@ -28,10 +30,33 @@ const ArtistPage = ({ artistSlug }) => {
   }
 
   return (
-    <div>
+    
+    <div className={styles.flex}>
+        <div className={styles.artistDesc}>
       <h1>{artist.name}</h1>
-      <p>Genre: {artist.genre}</p>
+      <div className={styles.info}>
+      <div><strong>Band members:</strong>
+      <ul className={styles.members}>
+        {artist.members.map((member) => (
+          <li key={member}>{member}</li>
+        ))}
+      </ul></div>
+      <div>
+      <p><strong>Genre:</strong> {artist.genre}</p></div>
+      </div>
       <p>{artist.bio}</p>
+      <div className={styles.tickets}>
+      <h4>Want to hear them live?</h4>
+      <Link href="./tickets">
+        {" "}
+        <p className={styles.writtenTickets}>
+          Buy Tickets →
+        </p>
+      </Link></div>
+    </div>
+    <div className={styles.artistLogo}>
+    <img src={artist.logo} alt="Artist Logo" />
+  </div>
     </div>
   );
 };
