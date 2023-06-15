@@ -55,7 +55,7 @@ const ArtistPage = ({ artistSlug }) => {
       </Link></div>
     </div>
     <div className={styles.artistLogo}>
-    <img src={artist.logo} alt="Artist Logo" />
+    <img src={artist.logo} alt="Artist Image" />
   </div>
     </div>
   );

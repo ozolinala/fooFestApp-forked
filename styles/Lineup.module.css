@@ -61,8 +61,7 @@
 }
 .flex{
 display: flex;
-margin: 7vh 6vh 21vh 6vh;
-margin-right: 6vh;
+margin: 7vh 0vh 21vh 6vh;
 gap:9vh;
 flex-wrap: wrap;
 }
