@@ -185,9 +185,9 @@
 }
 .heroTextContainer {
   display: flex;
-  justify-content: center; /* Centers the content horizontally */
-  align-items: center; /* Centers the content vertically */
-  height: 100%; /* Ensure the container takes up the full height */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .heroText {
@@ -196,7 +196,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  /* Add any additional styles for the heroText */
 }
 
 .written {
@@ -388,7 +387,7 @@
   }
 
   .box:nth-child(2 + 1) {
-    order: -1; /* Reverses the order of the 3rd and 4th boxes */
+    order: -1; 
   }
 
   .artistsText {

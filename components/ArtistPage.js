@@ -26,7 +26,7 @@ const ArtistPage = ({ artistSlug }) => {
   }, [artistSlug]);
 
   if (!artist) {
-    return <div>Loading artist...</div>;
+    return <div>Loading artist..</div>;
   }
 
   return (
@@ -55,7 +55,8 @@ const ArtistPage = ({ artistSlug }) => {
       </Link></div>
     </div>
     <div className={styles.artistLogo}>
-    <img src={artist.logo} alt="Artist Image" />
+    <img src="pics/artist image.jpg" alt="Photo by Tanya Pro on Unsplash" className={styles.logo}/>
+    {/* <img src={artist.logo} alt="Artist Image" /> */}
   </div>
     </div>
   );
